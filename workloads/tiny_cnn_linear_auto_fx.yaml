@@ -1,0 +1,52 @@
+- id: 0
+  name: conv
+  operator_type: Conv
+  equation: O[b][k][oy][ox]+=W[k][c][fy][fx]*I[b][c][iy][ix]
+  dimension_relations:
+  - ix=1*ox+1*fx
+  - iy=1*oy+1*fy
+  loop_dims:
+  - B
+  - K
+  - C
+  - OY
+  - OX
+  - FY
+  - FX
+  loop_sizes:
+  - 1
+  - 8
+  - 3
+  - 16
+  - 16
+  - 3
+  - 3
+  operand_precision:
+    W: 8
+    I: 8
+    O: 16
+    O_final: 8
+  operand_source:
+    I: 0
+    W: 0
+- id: 1
+  name: fc
+  operator_type: Gemm
+  equation: O[d0][d1]+=I[d0][d2]*W[d2][d1]
+  dimension_relations: []
+  loop_dims:
+  - D0
+  - D1
+  - D2
+  loop_sizes:
+  - 1
+  - 10
+  - 2048
+  operand_precision:
+    W: 8
+    I: 8
+    O: 16
+    O_final: 8
+  operand_source:
+    I: 0
+    W: 0
