@@ -1,0 +1,15 @@
+[
+  {
+    "tensor": "fc_O",
+    "producer_layer_id": 0,
+    "consumer_layer_ids": [],
+    "shape": [
+      1,
+      32
+    ],
+    "fanout": 0,
+    "lifetime": 0,
+    "reuse_proxy": 0,
+    "semantic_type": "activation"
+  }
+]
