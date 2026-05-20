@@ -1,0 +1,44 @@
+[
+  {
+    "tensor": "conv_O",
+    "producer_layer_id": 0,
+    "consumer_layer_ids": [
+      1
+    ],
+    "shape": [
+      1,
+      8,
+      16,
+      16
+    ],
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse_proxy": 1,
+    "semantic_type": "activation",
+    "reuse": 320,
+    "class_id": 3,
+    "class_name": "high_reuse_activation",
+    "recommended_memory": "eDRAM/SRAM",
+    "recommended_fabric": "high-bandwidth fabric",
+    "reason": "Reuse 320 is at least 128."
+  },
+  {
+    "tensor": "fc_O",
+    "producer_layer_id": 1,
+    "consumer_layer_ids": [],
+    "shape": [
+      1,
+      10
+    ],
+    "fanout": 0,
+    "lifetime": 0,
+    "reuse_proxy": 0,
+    "semantic_type": "activation",
+    "reuse": 0,
+    "class_id": 2,
+    "class_name": "ephemeral_activation",
+    "recommended_memory": "SRAM",
+    "recommended_fabric": "local fabric",
+    "reason": "Lifetime 0 is at most 1 and reuse 0 is low."
+  }
+]
