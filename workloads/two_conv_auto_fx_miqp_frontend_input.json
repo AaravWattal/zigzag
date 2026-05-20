@@ -1,0 +1,181 @@
+{
+  "workload_name": "two_conv_auto_fx",
+  "compute_nodes": [
+    {
+      "id": 0,
+      "name": "conv0",
+      "operator_type": "Conv"
+    },
+    {
+      "id": 1,
+      "name": "conv1",
+      "operator_type": "Conv"
+    }
+  ],
+  "tensor_edges": [
+    {
+      "tensor": "conv0_O",
+      "producer": 0,
+      "consumers": [
+        1
+      ],
+      "size_elements": 2048,
+      "lifetime": 1,
+      "reuse": 396,
+      "fanout": 1,
+      "category": "intermediate_activation"
+    },
+    {
+      "tensor": "conv1_O",
+      "producer": 1,
+      "consumers": [],
+      "size_elements": 4096,
+      "lifetime": 0,
+      "reuse": 0,
+      "fanout": 0,
+      "category": "intermediate_activation"
+    }
+  ],
+  "memory_accesses": [
+    {
+      "layer_id": 0,
+      "operand": "I",
+      "tensor": "tensor_input",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 72,
+      "writes": 3,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "I",
+      "tensor": "tensor_input",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 1,
+      "reads": 122,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "O",
+      "tensor": "conv0_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 61440,
+      "writes": 55296,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "O",
+      "tensor": "conv0_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 1,
+      "reads": 8,
+      "writes": 8,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "O",
+      "tensor": "conv0_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 2,
+      "reads": 0,
+      "writes": 256,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "W",
+      "tensor": "conv0_W",
+      "tensor_category": "weights",
+      "memory_level": 0,
+      "reads": 55296,
+      "writes": 216,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "W",
+      "tensor": "conv0_W",
+      "tensor_category": "weights",
+      "memory_level": 1,
+      "reads": 27,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "I",
+      "tensor": "conv0_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 72,
+      "writes": 10,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "I",
+      "tensor": "conv0_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 1,
+      "reads": 324,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "O",
+      "tensor": "conv1_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 327680,
+      "writes": 294912,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "O",
+      "tensor": "conv1_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 1,
+      "reads": 16,
+      "writes": 16,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "O",
+      "tensor": "conv1_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 2,
+      "reads": 0,
+      "writes": 512,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "W",
+      "tensor": "conv1_W",
+      "tensor_category": "weights",
+      "memory_level": 0,
+      "reads": 294912,
+      "writes": 1152,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "W",
+      "tensor": "conv1_W",
+      "tensor_category": "weights",
+      "memory_level": 1,
+      "reads": 144,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    }
+  ]
+}
