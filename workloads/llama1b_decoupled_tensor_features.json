@@ -1,0 +1,5105 @@
+[
+  {
+    "tensor": "edge_node_layer_norm_out",
+    "producer_layer_id": "node_layer_norm",
+    "consumer_layer_ids": [
+      "node_linear",
+      "node_linear_1",
+      "node_linear_2"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_out",
+    "producer_layer_id": "node_linear",
+    "consumer_layer_ids": [
+      "node_matmul"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_1_out",
+    "producer_layer_id": "node_linear_1",
+    "consumer_layer_ids": [
+      "node_matmul"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_2_out",
+    "producer_layer_id": "node_linear_2",
+    "consumer_layer_ids": [
+      "node_matmul_1"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_out",
+    "producer_layer_id": "node_matmul",
+    "consumer_layer_ids": [
+      "node_matmul_1"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_1_out",
+    "producer_layer_id": "node_matmul_1",
+    "consumer_layer_ids": [
+      "node_linear_3"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_3_out",
+    "producer_layer_id": "node_linear_3",
+    "consumer_layer_ids": [
+      "node_add"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_out",
+    "producer_layer_id": "node_add",
+    "consumer_layer_ids": [
+      "node_layer_norm_1",
+      "node_add_2"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_1_out",
+    "producer_layer_id": "node_layer_norm_1",
+    "consumer_layer_ids": [
+      "node_linear_4",
+      "node_linear_5"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_4_out",
+    "producer_layer_id": "node_linear_4",
+    "consumer_layer_ids": [
+      "node_linear_6"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_5_out",
+    "producer_layer_id": "node_linear_5",
+    "consumer_layer_ids": [
+      "node_linear_6"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_6_out",
+    "producer_layer_id": "node_linear_6",
+    "consumer_layer_ids": [
+      "node_add_2"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_2_out",
+    "producer_layer_id": "node_add_2",
+    "consumer_layer_ids": [
+      "node_layer_norm_2",
+      "node_add_3"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_2_out",
+    "producer_layer_id": "node_layer_norm_2",
+    "consumer_layer_ids": [
+      "node_linear_7",
+      "node_linear_8",
+      "node_linear_9"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_7_out",
+    "producer_layer_id": "node_linear_7",
+    "consumer_layer_ids": [
+      "node_matmul_2"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_8_out",
+    "producer_layer_id": "node_linear_8",
+    "consumer_layer_ids": [
+      "node_matmul_2"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_9_out",
+    "producer_layer_id": "node_linear_9",
+    "consumer_layer_ids": [
+      "node_matmul_3"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_2_out",
+    "producer_layer_id": "node_matmul_2",
+    "consumer_layer_ids": [
+      "node_matmul_3"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_3_out",
+    "producer_layer_id": "node_matmul_3",
+    "consumer_layer_ids": [
+      "node_linear_10"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_10_out",
+    "producer_layer_id": "node_linear_10",
+    "consumer_layer_ids": [
+      "node_add_3"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_3_out",
+    "producer_layer_id": "node_add_3",
+    "consumer_layer_ids": [
+      "node_layer_norm_3",
+      "node_add_5"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_3_out",
+    "producer_layer_id": "node_layer_norm_3",
+    "consumer_layer_ids": [
+      "node_linear_11",
+      "node_linear_12"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_11_out",
+    "producer_layer_id": "node_linear_11",
+    "consumer_layer_ids": [
+      "node_linear_13"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_12_out",
+    "producer_layer_id": "node_linear_12",
+    "consumer_layer_ids": [
+      "node_linear_13"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_13_out",
+    "producer_layer_id": "node_linear_13",
+    "consumer_layer_ids": [
+      "node_add_5"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_5_out",
+    "producer_layer_id": "node_add_5",
+    "consumer_layer_ids": [
+      "node_layer_norm_4",
+      "node_add_6"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_4_out",
+    "producer_layer_id": "node_layer_norm_4",
+    "consumer_layer_ids": [
+      "node_linear_14",
+      "node_linear_15",
+      "node_linear_16"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_14_out",
+    "producer_layer_id": "node_linear_14",
+    "consumer_layer_ids": [
+      "node_matmul_4"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_15_out",
+    "producer_layer_id": "node_linear_15",
+    "consumer_layer_ids": [
+      "node_matmul_4"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_16_out",
+    "producer_layer_id": "node_linear_16",
+    "consumer_layer_ids": [
+      "node_matmul_5"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_4_out",
+    "producer_layer_id": "node_matmul_4",
+    "consumer_layer_ids": [
+      "node_matmul_5"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_5_out",
+    "producer_layer_id": "node_matmul_5",
+    "consumer_layer_ids": [
+      "node_linear_17"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_17_out",
+    "producer_layer_id": "node_linear_17",
+    "consumer_layer_ids": [
+      "node_add_6"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_6_out",
+    "producer_layer_id": "node_add_6",
+    "consumer_layer_ids": [
+      "node_layer_norm_5",
+      "node_add_8"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_5_out",
+    "producer_layer_id": "node_layer_norm_5",
+    "consumer_layer_ids": [
+      "node_linear_18",
+      "node_linear_19"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_18_out",
+    "producer_layer_id": "node_linear_18",
+    "consumer_layer_ids": [
+      "node_linear_20"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_19_out",
+    "producer_layer_id": "node_linear_19",
+    "consumer_layer_ids": [
+      "node_linear_20"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_20_out",
+    "producer_layer_id": "node_linear_20",
+    "consumer_layer_ids": [
+      "node_add_8"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_8_out",
+    "producer_layer_id": "node_add_8",
+    "consumer_layer_ids": [
+      "node_layer_norm_6",
+      "node_add_9"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_6_out",
+    "producer_layer_id": "node_layer_norm_6",
+    "consumer_layer_ids": [
+      "node_linear_21",
+      "node_linear_22",
+      "node_linear_23"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_21_out",
+    "producer_layer_id": "node_linear_21",
+    "consumer_layer_ids": [
+      "node_matmul_6"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_22_out",
+    "producer_layer_id": "node_linear_22",
+    "consumer_layer_ids": [
+      "node_matmul_6"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_23_out",
+    "producer_layer_id": "node_linear_23",
+    "consumer_layer_ids": [
+      "node_matmul_7"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_6_out",
+    "producer_layer_id": "node_matmul_6",
+    "consumer_layer_ids": [
+      "node_matmul_7"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_7_out",
+    "producer_layer_id": "node_matmul_7",
+    "consumer_layer_ids": [
+      "node_linear_24"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_24_out",
+    "producer_layer_id": "node_linear_24",
+    "consumer_layer_ids": [
+      "node_add_9"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_9_out",
+    "producer_layer_id": "node_add_9",
+    "consumer_layer_ids": [
+      "node_layer_norm_7",
+      "node_add_11"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_7_out",
+    "producer_layer_id": "node_layer_norm_7",
+    "consumer_layer_ids": [
+      "node_linear_25",
+      "node_linear_26"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_25_out",
+    "producer_layer_id": "node_linear_25",
+    "consumer_layer_ids": [
+      "node_linear_27"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_26_out",
+    "producer_layer_id": "node_linear_26",
+    "consumer_layer_ids": [
+      "node_linear_27"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_27_out",
+    "producer_layer_id": "node_linear_27",
+    "consumer_layer_ids": [
+      "node_add_11"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_11_out",
+    "producer_layer_id": "node_add_11",
+    "consumer_layer_ids": [
+      "node_layer_norm_8",
+      "node_add_12"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_8_out",
+    "producer_layer_id": "node_layer_norm_8",
+    "consumer_layer_ids": [
+      "node_linear_28",
+      "node_linear_29",
+      "node_linear_30"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_28_out",
+    "producer_layer_id": "node_linear_28",
+    "consumer_layer_ids": [
+      "node_matmul_8"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_29_out",
+    "producer_layer_id": "node_linear_29",
+    "consumer_layer_ids": [
+      "node_matmul_8"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_30_out",
+    "producer_layer_id": "node_linear_30",
+    "consumer_layer_ids": [
+      "node_matmul_9"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_8_out",
+    "producer_layer_id": "node_matmul_8",
+    "consumer_layer_ids": [
+      "node_matmul_9"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_9_out",
+    "producer_layer_id": "node_matmul_9",
+    "consumer_layer_ids": [
+      "node_linear_31"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_31_out",
+    "producer_layer_id": "node_linear_31",
+    "consumer_layer_ids": [
+      "node_add_12"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_12_out",
+    "producer_layer_id": "node_add_12",
+    "consumer_layer_ids": [
+      "node_layer_norm_9",
+      "node_add_14"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_9_out",
+    "producer_layer_id": "node_layer_norm_9",
+    "consumer_layer_ids": [
+      "node_linear_32",
+      "node_linear_33"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_32_out",
+    "producer_layer_id": "node_linear_32",
+    "consumer_layer_ids": [
+      "node_linear_34"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_33_out",
+    "producer_layer_id": "node_linear_33",
+    "consumer_layer_ids": [
+      "node_linear_34"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_34_out",
+    "producer_layer_id": "node_linear_34",
+    "consumer_layer_ids": [
+      "node_add_14"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_14_out",
+    "producer_layer_id": "node_add_14",
+    "consumer_layer_ids": [
+      "node_layer_norm_10",
+      "node_add_15"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_10_out",
+    "producer_layer_id": "node_layer_norm_10",
+    "consumer_layer_ids": [
+      "node_linear_35",
+      "node_linear_36",
+      "node_linear_37"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_35_out",
+    "producer_layer_id": "node_linear_35",
+    "consumer_layer_ids": [
+      "node_matmul_10"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_36_out",
+    "producer_layer_id": "node_linear_36",
+    "consumer_layer_ids": [
+      "node_matmul_10"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_37_out",
+    "producer_layer_id": "node_linear_37",
+    "consumer_layer_ids": [
+      "node_matmul_11"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_10_out",
+    "producer_layer_id": "node_matmul_10",
+    "consumer_layer_ids": [
+      "node_matmul_11"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_11_out",
+    "producer_layer_id": "node_matmul_11",
+    "consumer_layer_ids": [
+      "node_linear_38"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_38_out",
+    "producer_layer_id": "node_linear_38",
+    "consumer_layer_ids": [
+      "node_add_15"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_15_out",
+    "producer_layer_id": "node_add_15",
+    "consumer_layer_ids": [
+      "node_layer_norm_11",
+      "node_add_17"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_11_out",
+    "producer_layer_id": "node_layer_norm_11",
+    "consumer_layer_ids": [
+      "node_linear_39",
+      "node_linear_40"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_39_out",
+    "producer_layer_id": "node_linear_39",
+    "consumer_layer_ids": [
+      "node_linear_41"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_40_out",
+    "producer_layer_id": "node_linear_40",
+    "consumer_layer_ids": [
+      "node_linear_41"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_41_out",
+    "producer_layer_id": "node_linear_41",
+    "consumer_layer_ids": [
+      "node_add_17"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_17_out",
+    "producer_layer_id": "node_add_17",
+    "consumer_layer_ids": [
+      "node_layer_norm_12",
+      "node_add_18"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_12_out",
+    "producer_layer_id": "node_layer_norm_12",
+    "consumer_layer_ids": [
+      "node_linear_42",
+      "node_linear_43",
+      "node_linear_44"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_42_out",
+    "producer_layer_id": "node_linear_42",
+    "consumer_layer_ids": [
+      "node_matmul_12"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_43_out",
+    "producer_layer_id": "node_linear_43",
+    "consumer_layer_ids": [
+      "node_matmul_12"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_44_out",
+    "producer_layer_id": "node_linear_44",
+    "consumer_layer_ids": [
+      "node_matmul_13"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_12_out",
+    "producer_layer_id": "node_matmul_12",
+    "consumer_layer_ids": [
+      "node_matmul_13"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_13_out",
+    "producer_layer_id": "node_matmul_13",
+    "consumer_layer_ids": [
+      "node_linear_45"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_45_out",
+    "producer_layer_id": "node_linear_45",
+    "consumer_layer_ids": [
+      "node_add_18"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_18_out",
+    "producer_layer_id": "node_add_18",
+    "consumer_layer_ids": [
+      "node_layer_norm_13",
+      "node_add_20"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_13_out",
+    "producer_layer_id": "node_layer_norm_13",
+    "consumer_layer_ids": [
+      "node_linear_46",
+      "node_linear_47"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_46_out",
+    "producer_layer_id": "node_linear_46",
+    "consumer_layer_ids": [
+      "node_linear_48"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_47_out",
+    "producer_layer_id": "node_linear_47",
+    "consumer_layer_ids": [
+      "node_linear_48"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_48_out",
+    "producer_layer_id": "node_linear_48",
+    "consumer_layer_ids": [
+      "node_add_20"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_20_out",
+    "producer_layer_id": "node_add_20",
+    "consumer_layer_ids": [
+      "node_layer_norm_14",
+      "node_add_21"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_14_out",
+    "producer_layer_id": "node_layer_norm_14",
+    "consumer_layer_ids": [
+      "node_linear_49",
+      "node_linear_50",
+      "node_linear_51"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_49_out",
+    "producer_layer_id": "node_linear_49",
+    "consumer_layer_ids": [
+      "node_matmul_14"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_50_out",
+    "producer_layer_id": "node_linear_50",
+    "consumer_layer_ids": [
+      "node_matmul_14"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_51_out",
+    "producer_layer_id": "node_linear_51",
+    "consumer_layer_ids": [
+      "node_matmul_15"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_14_out",
+    "producer_layer_id": "node_matmul_14",
+    "consumer_layer_ids": [
+      "node_matmul_15"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_15_out",
+    "producer_layer_id": "node_matmul_15",
+    "consumer_layer_ids": [
+      "node_linear_52"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_52_out",
+    "producer_layer_id": "node_linear_52",
+    "consumer_layer_ids": [
+      "node_add_21"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_21_out",
+    "producer_layer_id": "node_add_21",
+    "consumer_layer_ids": [
+      "node_layer_norm_15",
+      "node_add_23"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_15_out",
+    "producer_layer_id": "node_layer_norm_15",
+    "consumer_layer_ids": [
+      "node_linear_53",
+      "node_linear_54"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_53_out",
+    "producer_layer_id": "node_linear_53",
+    "consumer_layer_ids": [
+      "node_linear_55"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_54_out",
+    "producer_layer_id": "node_linear_54",
+    "consumer_layer_ids": [
+      "node_linear_55"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_55_out",
+    "producer_layer_id": "node_linear_55",
+    "consumer_layer_ids": [
+      "node_add_23"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_23_out",
+    "producer_layer_id": "node_add_23",
+    "consumer_layer_ids": [
+      "node_layer_norm_16",
+      "node_add_24"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_16_out",
+    "producer_layer_id": "node_layer_norm_16",
+    "consumer_layer_ids": [
+      "node_linear_56",
+      "node_linear_57",
+      "node_linear_58"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_56_out",
+    "producer_layer_id": "node_linear_56",
+    "consumer_layer_ids": [
+      "node_matmul_16"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_57_out",
+    "producer_layer_id": "node_linear_57",
+    "consumer_layer_ids": [
+      "node_matmul_16"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_58_out",
+    "producer_layer_id": "node_linear_58",
+    "consumer_layer_ids": [
+      "node_matmul_17"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_16_out",
+    "producer_layer_id": "node_matmul_16",
+    "consumer_layer_ids": [
+      "node_matmul_17"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_17_out",
+    "producer_layer_id": "node_matmul_17",
+    "consumer_layer_ids": [
+      "node_linear_59"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_59_out",
+    "producer_layer_id": "node_linear_59",
+    "consumer_layer_ids": [
+      "node_add_24"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_24_out",
+    "producer_layer_id": "node_add_24",
+    "consumer_layer_ids": [
+      "node_layer_norm_17",
+      "node_add_26"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_17_out",
+    "producer_layer_id": "node_layer_norm_17",
+    "consumer_layer_ids": [
+      "node_linear_60",
+      "node_linear_61"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_60_out",
+    "producer_layer_id": "node_linear_60",
+    "consumer_layer_ids": [
+      "node_linear_62"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_61_out",
+    "producer_layer_id": "node_linear_61",
+    "consumer_layer_ids": [
+      "node_linear_62"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_62_out",
+    "producer_layer_id": "node_linear_62",
+    "consumer_layer_ids": [
+      "node_add_26"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_26_out",
+    "producer_layer_id": "node_add_26",
+    "consumer_layer_ids": [
+      "node_layer_norm_18",
+      "node_add_27"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_18_out",
+    "producer_layer_id": "node_layer_norm_18",
+    "consumer_layer_ids": [
+      "node_linear_63",
+      "node_linear_64",
+      "node_linear_65"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_63_out",
+    "producer_layer_id": "node_linear_63",
+    "consumer_layer_ids": [
+      "node_matmul_18"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_64_out",
+    "producer_layer_id": "node_linear_64",
+    "consumer_layer_ids": [
+      "node_matmul_18"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_65_out",
+    "producer_layer_id": "node_linear_65",
+    "consumer_layer_ids": [
+      "node_matmul_19"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_18_out",
+    "producer_layer_id": "node_matmul_18",
+    "consumer_layer_ids": [
+      "node_matmul_19"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_19_out",
+    "producer_layer_id": "node_matmul_19",
+    "consumer_layer_ids": [
+      "node_linear_66"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_66_out",
+    "producer_layer_id": "node_linear_66",
+    "consumer_layer_ids": [
+      "node_add_27"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_27_out",
+    "producer_layer_id": "node_add_27",
+    "consumer_layer_ids": [
+      "node_layer_norm_19",
+      "node_add_29"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_19_out",
+    "producer_layer_id": "node_layer_norm_19",
+    "consumer_layer_ids": [
+      "node_linear_67",
+      "node_linear_68"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_67_out",
+    "producer_layer_id": "node_linear_67",
+    "consumer_layer_ids": [
+      "node_linear_69"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_68_out",
+    "producer_layer_id": "node_linear_68",
+    "consumer_layer_ids": [
+      "node_linear_69"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_69_out",
+    "producer_layer_id": "node_linear_69",
+    "consumer_layer_ids": [
+      "node_add_29"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_29_out",
+    "producer_layer_id": "node_add_29",
+    "consumer_layer_ids": [
+      "node_layer_norm_20",
+      "node_add_30"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_20_out",
+    "producer_layer_id": "node_layer_norm_20",
+    "consumer_layer_ids": [
+      "node_linear_70",
+      "node_linear_71",
+      "node_linear_72"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_70_out",
+    "producer_layer_id": "node_linear_70",
+    "consumer_layer_ids": [
+      "node_matmul_20"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_71_out",
+    "producer_layer_id": "node_linear_71",
+    "consumer_layer_ids": [
+      "node_matmul_20"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_72_out",
+    "producer_layer_id": "node_linear_72",
+    "consumer_layer_ids": [
+      "node_matmul_21"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_20_out",
+    "producer_layer_id": "node_matmul_20",
+    "consumer_layer_ids": [
+      "node_matmul_21"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_21_out",
+    "producer_layer_id": "node_matmul_21",
+    "consumer_layer_ids": [
+      "node_linear_73"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_73_out",
+    "producer_layer_id": "node_linear_73",
+    "consumer_layer_ids": [
+      "node_add_30"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_30_out",
+    "producer_layer_id": "node_add_30",
+    "consumer_layer_ids": [
+      "node_layer_norm_21",
+      "node_add_32"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_21_out",
+    "producer_layer_id": "node_layer_norm_21",
+    "consumer_layer_ids": [
+      "node_linear_74",
+      "node_linear_75"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_74_out",
+    "producer_layer_id": "node_linear_74",
+    "consumer_layer_ids": [
+      "node_linear_76"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_75_out",
+    "producer_layer_id": "node_linear_75",
+    "consumer_layer_ids": [
+      "node_linear_76"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_76_out",
+    "producer_layer_id": "node_linear_76",
+    "consumer_layer_ids": [
+      "node_add_32"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_32_out",
+    "producer_layer_id": "node_add_32",
+    "consumer_layer_ids": [
+      "node_layer_norm_22",
+      "node_add_33"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_22_out",
+    "producer_layer_id": "node_layer_norm_22",
+    "consumer_layer_ids": [
+      "node_linear_77",
+      "node_linear_78",
+      "node_linear_79"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_77_out",
+    "producer_layer_id": "node_linear_77",
+    "consumer_layer_ids": [
+      "node_matmul_22"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_78_out",
+    "producer_layer_id": "node_linear_78",
+    "consumer_layer_ids": [
+      "node_matmul_22"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_79_out",
+    "producer_layer_id": "node_linear_79",
+    "consumer_layer_ids": [
+      "node_matmul_23"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_22_out",
+    "producer_layer_id": "node_matmul_22",
+    "consumer_layer_ids": [
+      "node_matmul_23"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_23_out",
+    "producer_layer_id": "node_matmul_23",
+    "consumer_layer_ids": [
+      "node_linear_80"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_80_out",
+    "producer_layer_id": "node_linear_80",
+    "consumer_layer_ids": [
+      "node_add_33"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_33_out",
+    "producer_layer_id": "node_add_33",
+    "consumer_layer_ids": [
+      "node_layer_norm_23",
+      "node_add_35"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_23_out",
+    "producer_layer_id": "node_layer_norm_23",
+    "consumer_layer_ids": [
+      "node_linear_81",
+      "node_linear_82"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_81_out",
+    "producer_layer_id": "node_linear_81",
+    "consumer_layer_ids": [
+      "node_linear_83"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_82_out",
+    "producer_layer_id": "node_linear_82",
+    "consumer_layer_ids": [
+      "node_linear_83"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_83_out",
+    "producer_layer_id": "node_linear_83",
+    "consumer_layer_ids": [
+      "node_add_35"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_35_out",
+    "producer_layer_id": "node_add_35",
+    "consumer_layer_ids": [
+      "node_layer_norm_24",
+      "node_add_36"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_24_out",
+    "producer_layer_id": "node_layer_norm_24",
+    "consumer_layer_ids": [
+      "node_linear_84",
+      "node_linear_85",
+      "node_linear_86"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_84_out",
+    "producer_layer_id": "node_linear_84",
+    "consumer_layer_ids": [
+      "node_matmul_24"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_85_out",
+    "producer_layer_id": "node_linear_85",
+    "consumer_layer_ids": [
+      "node_matmul_24"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_86_out",
+    "producer_layer_id": "node_linear_86",
+    "consumer_layer_ids": [
+      "node_matmul_25"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_24_out",
+    "producer_layer_id": "node_matmul_24",
+    "consumer_layer_ids": [
+      "node_matmul_25"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_25_out",
+    "producer_layer_id": "node_matmul_25",
+    "consumer_layer_ids": [
+      "node_linear_87"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_87_out",
+    "producer_layer_id": "node_linear_87",
+    "consumer_layer_ids": [
+      "node_add_36"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_36_out",
+    "producer_layer_id": "node_add_36",
+    "consumer_layer_ids": [
+      "node_layer_norm_25",
+      "node_add_38"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_25_out",
+    "producer_layer_id": "node_layer_norm_25",
+    "consumer_layer_ids": [
+      "node_linear_88",
+      "node_linear_89"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_88_out",
+    "producer_layer_id": "node_linear_88",
+    "consumer_layer_ids": [
+      "node_linear_90"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_89_out",
+    "producer_layer_id": "node_linear_89",
+    "consumer_layer_ids": [
+      "node_linear_90"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_90_out",
+    "producer_layer_id": "node_linear_90",
+    "consumer_layer_ids": [
+      "node_add_38"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_38_out",
+    "producer_layer_id": "node_add_38",
+    "consumer_layer_ids": [
+      "node_layer_norm_26",
+      "node_add_39"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_26_out",
+    "producer_layer_id": "node_layer_norm_26",
+    "consumer_layer_ids": [
+      "node_linear_91",
+      "node_linear_92",
+      "node_linear_93"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_91_out",
+    "producer_layer_id": "node_linear_91",
+    "consumer_layer_ids": [
+      "node_matmul_26"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_92_out",
+    "producer_layer_id": "node_linear_92",
+    "consumer_layer_ids": [
+      "node_matmul_26"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_93_out",
+    "producer_layer_id": "node_linear_93",
+    "consumer_layer_ids": [
+      "node_matmul_27"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_26_out",
+    "producer_layer_id": "node_matmul_26",
+    "consumer_layer_ids": [
+      "node_matmul_27"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_27_out",
+    "producer_layer_id": "node_matmul_27",
+    "consumer_layer_ids": [
+      "node_linear_94"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_94_out",
+    "producer_layer_id": "node_linear_94",
+    "consumer_layer_ids": [
+      "node_add_39"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_39_out",
+    "producer_layer_id": "node_add_39",
+    "consumer_layer_ids": [
+      "node_layer_norm_27",
+      "node_add_41"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_27_out",
+    "producer_layer_id": "node_layer_norm_27",
+    "consumer_layer_ids": [
+      "node_linear_95",
+      "node_linear_96"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_95_out",
+    "producer_layer_id": "node_linear_95",
+    "consumer_layer_ids": [
+      "node_linear_97"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_96_out",
+    "producer_layer_id": "node_linear_96",
+    "consumer_layer_ids": [
+      "node_linear_97"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_97_out",
+    "producer_layer_id": "node_linear_97",
+    "consumer_layer_ids": [
+      "node_add_41"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_41_out",
+    "producer_layer_id": "node_add_41",
+    "consumer_layer_ids": [
+      "node_layer_norm_28",
+      "node_add_42"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_28_out",
+    "producer_layer_id": "node_layer_norm_28",
+    "consumer_layer_ids": [
+      "node_linear_98",
+      "node_linear_99",
+      "node_linear_100"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_98_out",
+    "producer_layer_id": "node_linear_98",
+    "consumer_layer_ids": [
+      "node_matmul_28"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_99_out",
+    "producer_layer_id": "node_linear_99",
+    "consumer_layer_ids": [
+      "node_matmul_28"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_100_out",
+    "producer_layer_id": "node_linear_100",
+    "consumer_layer_ids": [
+      "node_matmul_29"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_28_out",
+    "producer_layer_id": "node_matmul_28",
+    "consumer_layer_ids": [
+      "node_matmul_29"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_29_out",
+    "producer_layer_id": "node_matmul_29",
+    "consumer_layer_ids": [
+      "node_linear_101"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_101_out",
+    "producer_layer_id": "node_linear_101",
+    "consumer_layer_ids": [
+      "node_add_42"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_42_out",
+    "producer_layer_id": "node_add_42",
+    "consumer_layer_ids": [
+      "node_layer_norm_29",
+      "node_add_44"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_29_out",
+    "producer_layer_id": "node_layer_norm_29",
+    "consumer_layer_ids": [
+      "node_linear_102",
+      "node_linear_103"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_102_out",
+    "producer_layer_id": "node_linear_102",
+    "consumer_layer_ids": [
+      "node_linear_104"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_103_out",
+    "producer_layer_id": "node_linear_103",
+    "consumer_layer_ids": [
+      "node_linear_104"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_104_out",
+    "producer_layer_id": "node_linear_104",
+    "consumer_layer_ids": [
+      "node_add_44"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_44_out",
+    "producer_layer_id": "node_add_44",
+    "consumer_layer_ids": [
+      "node_layer_norm_30",
+      "node_add_45"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 8,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_30_out",
+    "producer_layer_id": "node_layer_norm_30",
+    "consumer_layer_ids": [
+      "node_linear_105",
+      "node_linear_106",
+      "node_linear_107"
+    ],
+    "size_bytes": 6144,
+    "fanout": 3,
+    "lifetime": 3,
+    "reuse": 3,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_105_out",
+    "producer_layer_id": "node_linear_105",
+    "consumer_layer_ids": [
+      "node_matmul_30"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 3,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_106_out",
+    "producer_layer_id": "node_linear_106",
+    "consumer_layer_ids": [
+      "node_matmul_30"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_107_out",
+    "producer_layer_id": "node_linear_107",
+    "consumer_layer_ids": [
+      "node_matmul_31"
+    ],
+    "size_bytes": 512,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_30_out",
+    "producer_layer_id": "node_matmul_30",
+    "consumer_layer_ids": [
+      "node_matmul_31"
+    ],
+    "size_bytes": 16416,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_matmul_31_out",
+    "producer_layer_id": "node_matmul_31",
+    "consumer_layer_ids": [
+      "node_linear_108"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_108_out",
+    "producer_layer_id": "node_linear_108",
+    "consumer_layer_ids": [
+      "node_add_45"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_add_45_out",
+    "producer_layer_id": "node_add_45",
+    "consumer_layer_ids": [
+      "node_layer_norm_31",
+      "node_mul_17"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 5,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_layer_norm_31_out",
+    "producer_layer_id": "node_layer_norm_31",
+    "consumer_layer_ids": [
+      "node_linear_109",
+      "node_linear_110"
+    ],
+    "size_bytes": 4096,
+    "fanout": 2,
+    "lifetime": 2,
+    "reuse": 2,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_109_out",
+    "producer_layer_id": "node_linear_109",
+    "consumer_layer_ids": [
+      "node_linear_111"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 2,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_110_out",
+    "producer_layer_id": "node_linear_110",
+    "consumer_layer_ids": [
+      "node_linear_111"
+    ],
+    "size_bytes": 8192,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "edge_node_linear_111_out",
+    "producer_layer_id": "node_linear_111",
+    "consumer_layer_ids": [
+      "node_mul_17"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse": 1,
+    "semantic_type": "activation",
+    "category": "intermediate_activation"
+  },
+  {
+    "tensor": "layers.0.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.0.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.0.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_1"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.0.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_2"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.0.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul",
+      "node_linear_1"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.0.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_1",
+      "node_linear_2"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.0.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_3"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.0.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_1"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.0.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_4"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.0.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_5"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.0.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_6"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.1.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_2"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.1.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_7"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.1.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_8"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.1.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_9"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.1.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_2",
+      "node_linear_8"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.1.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_3",
+      "node_linear_9"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.1.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_10"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.1.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_3"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.1.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_11"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.1.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_12"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.1.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_13"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.2.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_4"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.2.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_14"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.2.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_15"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.2.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_16"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.2.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_4",
+      "node_linear_15"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.2.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_5",
+      "node_linear_16"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.2.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_17"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.2.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_5"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.2.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_18"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.2.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_19"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.2.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_20"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.3.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_6"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.3.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_21"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.3.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_22"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.3.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_23"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.3.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_6",
+      "node_linear_22"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.3.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_7",
+      "node_linear_23"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.3.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_24"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.3.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_7"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.3.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_25"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.3.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_26"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.3.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_27"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.4.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_8"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.4.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_28"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.4.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_29"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.4.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_30"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.4.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_8",
+      "node_linear_29"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.4.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_9",
+      "node_linear_30"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.4.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_31"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.4.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_9"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.4.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_32"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.4.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_33"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.4.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_34"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.5.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_10"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.5.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_35"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.5.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_36"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.5.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_37"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.5.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_10",
+      "node_linear_36"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.5.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_11",
+      "node_linear_37"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.5.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_38"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.5.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_11"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.5.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_39"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.5.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_40"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.5.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_41"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.6.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_12"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.6.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_42"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.6.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_43"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.6.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_44"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.6.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_12",
+      "node_linear_43"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.6.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_13",
+      "node_linear_44"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.6.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_45"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.6.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_13"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.6.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_46"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.6.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_47"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.6.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_48"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.7.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_14"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.7.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_49"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.7.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_50"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.7.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_51"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.7.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_14",
+      "node_linear_50"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.7.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_15",
+      "node_linear_51"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.7.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_52"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.7.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_15"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.7.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_53"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.7.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_54"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.7.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_55"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.8.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_16"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.8.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_56"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.8.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_57"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.8.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_58"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.8.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_16",
+      "node_linear_57"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.8.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_17",
+      "node_linear_58"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.8.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_59"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.8.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_17"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.8.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_60"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.8.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_61"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.8.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_62"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.9.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_18"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.9.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_63"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.9.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_64"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.9.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_65"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.9.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_18",
+      "node_linear_64"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.9.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_19",
+      "node_linear_65"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.9.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_66"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.9.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_19"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.9.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_67"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.9.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_68"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.9.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_69"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.10.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_20"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.10.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_70"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.10.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_71"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.10.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_72"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.10.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_20",
+      "node_linear_71"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.10.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_21",
+      "node_linear_72"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.10.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_73"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.10.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_21"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.10.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_74"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.10.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_75"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.10.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_76"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.11.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_22"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.11.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_77"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.11.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_78"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.11.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_79"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.11.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_22",
+      "node_linear_78"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.11.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_23",
+      "node_linear_79"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.11.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_80"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.11.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_23"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.11.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_81"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.11.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_82"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.11.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_83"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.12.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_24"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.12.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_84"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.12.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_85"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.12.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_86"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.12.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_24",
+      "node_linear_85"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.12.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_25",
+      "node_linear_86"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.12.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_87"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.12.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_25"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.12.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_88"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.12.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_89"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.12.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_90"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.13.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_26"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.13.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_91"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.13.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_92"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.13.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_93"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.13.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_26",
+      "node_linear_92"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.13.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_27",
+      "node_linear_93"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.13.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_94"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.13.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_27"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.13.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_95"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.13.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_96"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.13.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_97"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.14.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_28"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.14.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_98"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.14.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_99"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.14.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_100"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.14.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_28",
+      "node_linear_99"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.14.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_29",
+      "node_linear_100"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.14.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_101"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.14.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_29"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.14.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_102"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.14.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_103"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.14.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_104"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.15.attention_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_30"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.15.attention.wq.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_105"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.15.attention.wk.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_106"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.15.attention.wv.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_107"
+    ],
+    "size_bytes": 1048576,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 1048576,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.15.attention.cache_k_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_30",
+      "node_linear_106"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.15.attention.cache_v_0",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_matmul_31",
+      "node_linear_107"
+    ],
+    "size_bytes": 2097152,
+    "fanout": 2,
+    "lifetime": 0,
+    "reuse": 2097152,
+    "semantic_type": "kv_cache",
+    "category": "kv_cache"
+  },
+  {
+    "tensor": "layers.15.attention.wo.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_108"
+    ],
+    "size_bytes": 4194304,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 4194304,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.15.ffn_norm.bias",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_layer_norm_31"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.15.feed_forward.w1.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_109"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.15.feed_forward.w3.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_110"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "layers.15.feed_forward.w2.0.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_linear_111"
+    ],
+    "size_bytes": 16777216,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 16777216,
+    "semantic_type": "weight",
+    "category": "weights"
+  },
+  {
+    "tensor": "norm.weight",
+    "producer_layer_id": null,
+    "consumer_layer_ids": [
+      "node_mul_17"
+    ],
+    "size_bytes": 2048,
+    "fanout": 1,
+    "lifetime": 0,
+    "reuse": 2048,
+    "semantic_type": "weight",
+    "category": "weights"
+  }
+]

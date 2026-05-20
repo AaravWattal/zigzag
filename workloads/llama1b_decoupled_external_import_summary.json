@@ -1,0 +1,22 @@
+{
+  "name": "llama1b_decoupled",
+  "num_compute_nodes": 208,
+  "num_edges": 286,
+  "num_persistent_tensors": 177,
+  "num_accesses": 209,
+  "op_histogram": {
+    "Add": 31,
+    "LayerNormalization": 32,
+    "MatMul": 144,
+    "Mul": 1
+  },
+  "tensor_category_histogram": {
+    "weights": 145,
+    "intermediate_activation": 0,
+    "kv_cache": 64
+  },
+  "memory_assignment_histogram": {
+    "LtRAM": 177,
+    "StRAM": 32
+  }
+}
