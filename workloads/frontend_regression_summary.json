@@ -27,7 +27,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/two_conv_auto_fx.yaml",
-      "cmes_pickle": "outputs/two_conv_auto_fx_20260519_230018/cmes.pickle",
+      "cmes_pickle": "outputs/two_conv_auto_fx_20260519_230753/cmes.pickle",
       "tensor_features": "workloads/two_conv_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/two_conv_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/two_conv_auto_fx_tensor_features_classified.json",
@@ -35,7 +35,7 @@
       "expanded_memory_graph": "workloads/two_conv_auto_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/two_conv_auto_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/two_conv_auto_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/two_conv_auto_fx_20260519_230018"
+      "dump_folder": "outputs/two_conv_auto_fx_20260519_230753"
     },
     {
       "model": "tiny_residual",
@@ -64,7 +64,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/tiny_residual_auto_fx.yaml",
-      "cmes_pickle": "outputs/tiny_residual_auto_fx_20260519_230021/cmes.pickle",
+      "cmes_pickle": "outputs/tiny_residual_auto_fx_20260519_230757/cmes.pickle",
       "tensor_features": "workloads/tiny_residual_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/tiny_residual_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/tiny_residual_auto_fx_tensor_features_classified.json",
@@ -72,7 +72,7 @@
       "expanded_memory_graph": "workloads/tiny_residual_auto_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/tiny_residual_auto_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/tiny_residual_auto_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/tiny_residual_auto_fx_20260519_230021"
+      "dump_folder": "outputs/tiny_residual_auto_fx_20260519_230757"
     },
     {
       "model": "one_linear",
@@ -100,7 +100,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/one_linear_fx.yaml",
-      "cmes_pickle": "outputs/one_linear_fx_20260519_230025/cmes.pickle",
+      "cmes_pickle": "outputs/one_linear_fx_20260519_230800/cmes.pickle",
       "tensor_features": "workloads/one_linear_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/one_linear_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/one_linear_fx_tensor_features_classified.json",
@@ -108,7 +108,7 @@
       "expanded_memory_graph": "workloads/one_linear_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/one_linear_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/one_linear_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/one_linear_fx_20260519_230025"
+      "dump_folder": "outputs/one_linear_fx_20260519_230800"
     },
     {
       "model": "tiny_cnn_linear",
@@ -137,7 +137,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/tiny_cnn_linear_auto_fx.yaml",
-      "cmes_pickle": "outputs/tiny_cnn_linear_auto_fx_20260519_230028/cmes.pickle",
+      "cmes_pickle": "outputs/tiny_cnn_linear_auto_fx_20260519_230804/cmes.pickle",
       "tensor_features": "workloads/tiny_cnn_linear_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/tiny_cnn_linear_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/tiny_cnn_linear_auto_fx_tensor_features_classified.json",
@@ -145,7 +145,7 @@
       "expanded_memory_graph": "workloads/tiny_cnn_linear_auto_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/tiny_cnn_linear_auto_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/tiny_cnn_linear_auto_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/tiny_cnn_linear_auto_fx_20260519_230028"
+      "dump_folder": "outputs/tiny_cnn_linear_auto_fx_20260519_230804"
     },
     {
       "model": "tiny_attention",
@@ -175,7 +175,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/tiny_attention_auto_fx.yaml",
-      "cmes_pickle": "outputs/tiny_attention_auto_fx_20260519_230031/cmes.pickle",
+      "cmes_pickle": "outputs/tiny_attention_auto_fx_20260519_230807/cmes.pickle",
       "tensor_features": "workloads/tiny_attention_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/tiny_attention_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/tiny_attention_auto_fx_tensor_features_classified.json",
@@ -183,7 +183,7 @@
       "expanded_memory_graph": "workloads/tiny_attention_auto_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/tiny_attention_auto_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/tiny_attention_auto_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/tiny_attention_auto_fx_20260519_230031"
+      "dump_folder": "outputs/tiny_attention_auto_fx_20260519_230807"
     }
   ],
   "class_histogram": {

@@ -88,34 +88,51 @@ def tensor_access_totals(accesses):
     return totals
 
 
-def build_tensor_features(name, graph):
+def explicit_intermediate_edges(graph):
     nodes = graph.get("nodes", [])
     node_index = {node["id"]: idx for idx, node in enumerate(nodes)}
-    outgoing = defaultdict(list)
-    edge_sizes = defaultdict(int)
+    outgoing_destinations = defaultdict(set)
     for edge in graph.get("edges", []):
-        outgoing[edge["source"]].append(edge["destination"])
-        edge_sizes[(edge["source"], edge["destination"])] += edge.get("size", 0) or 0
+        source = edge.get("source")
+        destination = edge.get("destination")
+        if source in node_index and destination in node_index:
+            outgoing_destinations[source].add(destination)
 
-    features = []
-    for source, destinations in outgoing.items():
-        if source not in node_index:
-            continue
-        consumers = [dst for dst in destinations if dst in node_index]
-        if not consumers:
+    records = []
+    for idx, edge in enumerate(graph.get("edges", [])):
+        source = edge.get("source")
+        destination = edge.get("destination")
+        if source not in node_index or destination not in node_index:
             continue
         producer_idx = node_index[source]
-        last_consumer_idx = max(node_index[dst] for dst in consumers)
-        size_bytes = sum(edge_sizes[(source, dst)] for dst in consumers)
+        consumer_idx = node_index[destination]
+        records.append(
+            {
+                "tensor": f"edge_{source}_to_{destination}_{idx}",
+                "producer": source,
+                "consumers": [destination],
+                "size_bytes": edge.get("size", 0) or 0,
+                "fanout": len(outgoing_destinations[source]),
+                "lifetime": consumer_idx - producer_idx,
+                "reuse": 1,
+                "category": "intermediate_activation",
+            }
+        )
+    return records
+
+
+def build_tensor_features(name, graph):
+    features = []
+    for edge in explicit_intermediate_edges(graph):
         features.append(
             {
-                "tensor": f"edge_{source}_out",
-                "producer_layer_id": source,
-                "consumer_layer_ids": consumers,
-                "size_bytes": size_bytes,
-                "fanout": len(set(consumers)),
-                "lifetime": last_consumer_idx - producer_idx,
-                "reuse": len(consumers),
+                "tensor": edge["tensor"],
+                "producer_layer_id": edge["producer"],
+                "consumer_layer_ids": edge["consumers"],
+                "size_bytes": edge["size_bytes"],
+                "fanout": edge["fanout"],
+                "lifetime": edge["lifetime"],
+                "reuse": edge["reuse"],
                 "semantic_type": "activation",
                 "category": "intermediate_activation",
             }
@@ -196,33 +213,7 @@ def memory_level_accesses(graph):
 
 
 def build_edges(graph):
-    nodes = graph.get("nodes", [])
-    node_index = {node["id"]: idx for idx, node in enumerate(nodes)}
-    outgoing = defaultdict(list)
-    sizes = defaultdict(int)
-    for edge in graph.get("edges", []):
-        if edge["source"] in node_index and edge["destination"] in node_index:
-            outgoing[edge["source"]].append(edge["destination"])
-            sizes[edge["source"]] += edge.get("size", 0) or 0
-
-    edges = []
-    for source, destinations in outgoing.items():
-        consumers = sorted(set(destinations), key=lambda dst: node_index[dst])
-        producer_idx = node_index[source]
-        last_consumer_idx = max(node_index[dst] for dst in consumers)
-        edges.append(
-            {
-                "tensor": f"edge_{source}_out",
-                "producer": source,
-                "consumers": consumers,
-                "size_bytes": sizes[source],
-                "fanout": len(consumers),
-                "lifetime": last_consumer_idx - producer_idx,
-                "reuse": len(destinations),
-                "category": "intermediate_activation",
-            }
-        )
-    return edges
+    return explicit_intermediate_edges(graph)
 
 
 def build_expanded_graph(graph):
@@ -230,11 +221,18 @@ def build_expanded_graph(graph):
     accesses_by_node = defaultdict(list)
     for access in graph.get("accesses", []):
         accesses_by_node[access["op_id"]].append(access)
+    graph_edges = build_edges(graph)
+    inputs_by_node = defaultdict(list)
+    outputs_by_node = defaultdict(list)
+    for edge in graph_edges:
+        outputs_by_node[edge["producer"]].append(edge["tensor"])
+        for consumer in edge["consumers"]:
+            inputs_by_node[consumer].append(edge["tensor"])
 
     nodes = []
     for node in graph.get("nodes", []):
         memory_accesses = []
-        inputs = []
+        inputs = list(inputs_by_node.get(node["id"], []))
         for access in accesses_by_node.get(node["id"], []):
             tensor = tensor_by_id.get(access["tensor_id"], {})
             category = category_from_kind(tensor.get("kind"))
@@ -269,12 +267,12 @@ def build_expanded_graph(graph):
                 "compute_latency": node.get("compute_latency", node.get("latency")),
                 "local_scratch_bytes": node.get("local_scratch_bytes", 0),
                 "inputs": inputs,
-                "outputs": [f"edge_{node['id']}_out"],
+                "outputs": outputs_by_node.get(node["id"], []),
                 "memory_accesses": memory_accesses,
             }
         )
 
-    expanded = {"nodes": nodes, "edges": build_edges(graph)}
+    expanded = {"nodes": nodes, "edges": graph_edges}
     expanded["memory_assignment_histogram"] = normalized_histogram(
         Counter(access["suggested_memory"] for node in nodes for access in node["memory_accesses"]),
         MEMORY_TECHS,

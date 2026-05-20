@@ -1,0 +1,53 @@
+{
+  "input": "llama1b_decoupled",
+  "schema_version": "miqp_frontend_v0.1",
+  "source_format": "external_llama_decoupled",
+  "assertions": {
+    "schema_version": true,
+    "source_format": true,
+    "compute_nodes": true,
+    "tensor_edges": true,
+    "persistent_tensors": true,
+    "unique_kv_tensors": true,
+    "weight_tensors": true,
+    "all_kv_tensors_accessed": true,
+    "all_weight_tensors_read": true
+  },
+  "ingested": {
+    "compute_nodes": 208,
+    "tensor_edges": 286,
+    "persistent_tensors": 177,
+    "memory_access_records": 209,
+    "unique_kv_tensors": 32,
+    "weight_tensors": 145,
+    "persistent_tensor_categories": {
+      "kv_cache": 32,
+      "weights": 145
+    },
+    "memory_access_categories": {
+      "kv_cache": 64,
+      "weights": 145
+    }
+  },
+  "objective_components_available": {
+    "compute_energy": true,
+    "compute_latency": true,
+    "memory_read_bytes": true,
+    "memory_write_bytes": true
+  },
+  "k1_uniform_collapse": {
+    "memory_class": "SRAM",
+    "fabric_class": "default",
+    "num_collapsed_access_records": 209,
+    "total_read_bytes": 1040254976,
+    "total_write_bytes": 67108864
+  },
+  "backend_solve": {
+    "status": "not_run",
+    "reason": "No backend solver or monolithic MIQP formulation entry point is present in this repository.",
+    "variables": null,
+    "constraints": null,
+    "objective_components_in_model": [],
+    "parity_against_monolithic": "not_checked"
+  }
+}
