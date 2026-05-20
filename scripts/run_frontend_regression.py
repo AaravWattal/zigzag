@@ -282,13 +282,57 @@ def run_llama_imports():
             converted_path,
             "--name",
             "llama1b_converted",
+            "--source-format",
+            "external_llama_raw_converted",
         ]
     )
 
+    decoupled = parse_last_json_object(decoupled_stdout)
+    converted = parse_last_json_object(converted_stdout)
     return {
-        "llama1b_decoupled": parse_last_json_object(decoupled_stdout),
-        "llama1b_converted": parse_last_json_object(converted_stdout),
+        "llama1b_decoupled": decoupled,
+        "llama1b_converted": converted,
+        "consistency": llama_consistency_checks(decoupled, converted),
     }
+
+
+def llama_consistency_checks(decoupled, converted):
+    checks = {
+        "compute_nodes_match_expected_208": decoupled["num_compute_nodes"] == converted["num_compute_nodes"] == 208,
+        "edges_match_expected_286": decoupled["num_edges"] == converted["num_edges"] == 286,
+        "matmul_count_match_expected_144": (
+            decoupled["op_histogram"].get("MatMul") == converted["op_histogram"].get("MatMul") == 144
+        ),
+        "weights_count_match_expected_145": (
+            decoupled["persistent_tensor_category_histogram"].get("weights")
+            == converted["persistent_tensor_category_histogram"].get("weights")
+            == 145
+        ),
+        "kv_cache_unique_count_match": (
+            decoupled["persistent_tensor_category_histogram"].get("kv_cache")
+            == converted["persistent_tensor_category_histogram"].get("kv_cache")
+        ),
+        "kv_cache_access_count_match": (
+            decoupled["tensor_category_histogram"].get("kv_cache")
+            == converted["tensor_category_histogram"].get("kv_cache")
+        ),
+        "kv_cache_mismatch_explanation": (
+            "Both paths expose 32 unique KV tensors (16 layers x K/V). The preferred decoupled graph has "
+            "64 KV access records because each cache tensor has one read and one write. The raw graph exposes "
+            "Slice cache read nodes only, so the converted graph has 32 KV access records and no KV writes."
+        ),
+    }
+    required = [
+        "compute_nodes_match_expected_208",
+        "edges_match_expected_286",
+        "matmul_count_match_expected_144",
+        "weights_count_match_expected_145",
+        "kv_cache_unique_count_match",
+    ]
+    failed = [name for name in required if not checks[name]]
+    if failed:
+        raise RuntimeError(f"Llama consistency checks failed: {failed}")
+    return checks
 
 
 def main():

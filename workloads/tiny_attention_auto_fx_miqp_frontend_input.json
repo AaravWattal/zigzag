@@ -1,5 +1,7 @@
 {
+  "schema_version": "miqp_frontend_v0.1",
   "workload_name": "tiny_attention_auto_fx",
+  "source_format": "zigzag_fx",
   "compute_nodes": [
     {
       "id": 0,

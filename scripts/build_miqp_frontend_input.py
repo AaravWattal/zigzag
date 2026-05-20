@@ -5,6 +5,7 @@ from pathlib import Path
 
 
 COMPUTE_ID_RE = re.compile(r"^compute_(\d+)$")
+SCHEMA_VERSION = "miqp_frontend_v0.1"
 
 
 def parse_compute_id(value):
@@ -22,7 +23,7 @@ def edge_category(edge):
     return edge.get("category", "intermediate_activation")
 
 
-def build_miqp_input(workload_name, graph):
+def build_miqp_input(workload_name, graph, source_format="zigzag_fx"):
     compute_nodes = [
         {
             "id": node["layer_id"],
@@ -63,7 +64,9 @@ def build_miqp_input(workload_name, graph):
             )
 
     return {
+        "schema_version": SCHEMA_VERSION,
         "workload_name": workload_name,
+        "source_format": source_format,
         "compute_nodes": compute_nodes,
         "tensor_edges": tensor_edges,
         "memory_accesses": memory_accesses,
@@ -85,6 +88,7 @@ def main():
     parser.add_argument("expanded_memory_graph_assigned_json")
     parser.add_argument("output_json", nargs="?")
     parser.add_argument("--workload-name", default=None)
+    parser.add_argument("--source-format", default="zigzag_fx")
     args = parser.parse_args()
 
     graph_path = Path(args.expanded_memory_graph_assigned_json)
@@ -93,7 +97,7 @@ def main():
 
     out_path = Path(args.output_json) if args.output_json else default_out_path(graph_path)
     workload_name = args.workload_name or out_path.name.replace("_miqp_frontend_input.json", "")
-    miqp_input = build_miqp_input(workload_name, graph)
+    miqp_input = build_miqp_input(workload_name, graph, args.source_format)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:

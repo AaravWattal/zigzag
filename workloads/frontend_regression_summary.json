@@ -27,7 +27,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/two_conv_auto_fx.yaml",
-      "cmes_pickle": "outputs/two_conv_auto_fx_20260519_225250/cmes.pickle",
+      "cmes_pickle": "outputs/two_conv_auto_fx_20260519_230018/cmes.pickle",
       "tensor_features": "workloads/two_conv_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/two_conv_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/two_conv_auto_fx_tensor_features_classified.json",
@@ -35,7 +35,7 @@
       "expanded_memory_graph": "workloads/two_conv_auto_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/two_conv_auto_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/two_conv_auto_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/two_conv_auto_fx_20260519_225250"
+      "dump_folder": "outputs/two_conv_auto_fx_20260519_230018"
     },
     {
       "model": "tiny_residual",
@@ -64,7 +64,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/tiny_residual_auto_fx.yaml",
-      "cmes_pickle": "outputs/tiny_residual_auto_fx_20260519_225253/cmes.pickle",
+      "cmes_pickle": "outputs/tiny_residual_auto_fx_20260519_230021/cmes.pickle",
       "tensor_features": "workloads/tiny_residual_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/tiny_residual_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/tiny_residual_auto_fx_tensor_features_classified.json",
@@ -72,7 +72,7 @@
       "expanded_memory_graph": "workloads/tiny_residual_auto_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/tiny_residual_auto_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/tiny_residual_auto_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/tiny_residual_auto_fx_20260519_225253"
+      "dump_folder": "outputs/tiny_residual_auto_fx_20260519_230021"
     },
     {
       "model": "one_linear",
@@ -100,7 +100,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/one_linear_fx.yaml",
-      "cmes_pickle": "outputs/one_linear_fx_20260519_225256/cmes.pickle",
+      "cmes_pickle": "outputs/one_linear_fx_20260519_230025/cmes.pickle",
       "tensor_features": "workloads/one_linear_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/one_linear_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/one_linear_fx_tensor_features_classified.json",
@@ -108,7 +108,7 @@
       "expanded_memory_graph": "workloads/one_linear_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/one_linear_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/one_linear_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/one_linear_fx_20260519_225256"
+      "dump_folder": "outputs/one_linear_fx_20260519_230025"
     },
     {
       "model": "tiny_cnn_linear",
@@ -137,7 +137,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/tiny_cnn_linear_auto_fx.yaml",
-      "cmes_pickle": "outputs/tiny_cnn_linear_auto_fx_20260519_225259/cmes.pickle",
+      "cmes_pickle": "outputs/tiny_cnn_linear_auto_fx_20260519_230028/cmes.pickle",
       "tensor_features": "workloads/tiny_cnn_linear_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/tiny_cnn_linear_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/tiny_cnn_linear_auto_fx_tensor_features_classified.json",
@@ -145,7 +145,7 @@
       "expanded_memory_graph": "workloads/tiny_cnn_linear_auto_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/tiny_cnn_linear_auto_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/tiny_cnn_linear_auto_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/tiny_cnn_linear_auto_fx_20260519_225259"
+      "dump_folder": "outputs/tiny_cnn_linear_auto_fx_20260519_230028"
     },
     {
       "model": "tiny_attention",
@@ -175,7 +175,7 @@
         "kv_cache": 0
       },
       "yaml": "workloads/tiny_attention_auto_fx.yaml",
-      "cmes_pickle": "outputs/tiny_attention_auto_fx_20260519_225302/cmes.pickle",
+      "cmes_pickle": "outputs/tiny_attention_auto_fx_20260519_230031/cmes.pickle",
       "tensor_features": "workloads/tiny_attention_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/tiny_attention_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/tiny_attention_auto_fx_tensor_features_classified.json",
@@ -183,7 +183,7 @@
       "expanded_memory_graph": "workloads/tiny_attention_auto_fx_expanded_memory_graph.json",
       "expanded_memory_graph_assigned": "workloads/tiny_attention_auto_fx_expanded_memory_graph_assigned.json",
       "miqp_frontend_input": "workloads/tiny_attention_auto_fx_miqp_frontend_input.json",
-      "dump_folder": "outputs/tiny_attention_auto_fx_20260519_225302"
+      "dump_folder": "outputs/tiny_attention_auto_fx_20260519_230031"
     }
   ],
   "class_histogram": {
@@ -214,14 +214,42 @@
         "MatMul": 144,
         "Mul": 1
       },
+      "persistent_tensor_category_histogram": {
+        "weights": 145,
+        "intermediate_activation": 0,
+        "kv_cache": 32
+      },
       "tensor_category_histogram": {
         "weights": 145,
         "intermediate_activation": 0,
         "kv_cache": 64
       },
+      "tensor_category_bytes": {
+        "weights": 973146112,
+        "intermediate_activation": 0,
+        "kv_cache": 134217728
+      },
       "memory_assignment_histogram": {
         "LtRAM": 177,
         "StRAM": 32
+      },
+      "memory_assignment_bytes": {
+        "LtRAM": 1040254976,
+        "StRAM": 67108864
+      },
+      "persistent_tensors_total": 177,
+      "persistent_tensors_with_accesses": 177,
+      "persistent_tensors_without_accesses": 0,
+      "persistent_tensors_without_access_ids": [],
+      "total_read_bytes_by_category": {
+        "weights": 973146112,
+        "intermediate_activation": 0,
+        "kv_cache": 67108864
+      },
+      "total_write_bytes_by_category": {
+        "weights": 0,
+        "intermediate_activation": 0,
+        "kv_cache": 67108864
       }
     },
     "llama1b_converted": {
@@ -236,15 +264,52 @@
         "MatMul": 144,
         "Mul": 1
       },
+      "persistent_tensor_category_histogram": {
+        "weights": 145,
+        "intermediate_activation": 0,
+        "kv_cache": 32
+      },
       "tensor_category_histogram": {
         "weights": 145,
         "intermediate_activation": 0,
         "kv_cache": 32
       },
+      "tensor_category_bytes": {
+        "weights": 973146112,
+        "intermediate_activation": 0,
+        "kv_cache": 67108864
+      },
       "memory_assignment_histogram": {
         "LtRAM": 177,
         "StRAM": 0
+      },
+      "memory_assignment_bytes": {
+        "LtRAM": 1040254976,
+        "StRAM": 0
+      },
+      "persistent_tensors_total": 177,
+      "persistent_tensors_with_accesses": 177,
+      "persistent_tensors_without_accesses": 0,
+      "persistent_tensors_without_access_ids": [],
+      "total_read_bytes_by_category": {
+        "weights": 973146112,
+        "intermediate_activation": 0,
+        "kv_cache": 67108864
+      },
+      "total_write_bytes_by_category": {
+        "weights": 0,
+        "intermediate_activation": 0,
+        "kv_cache": 0
       }
+    },
+    "consistency": {
+      "compute_nodes_match_expected_208": true,
+      "edges_match_expected_286": true,
+      "matmul_count_match_expected_144": true,
+      "weights_count_match_expected_145": true,
+      "kv_cache_unique_count_match": true,
+      "kv_cache_access_count_match": false,
+      "kv_cache_mismatch_explanation": "Both paths expose 32 unique KV tensors (16 layers x K/V). The preferred decoupled graph has 64 KV access records because each cache tensor has one read and one write. The raw graph exposes Slice cache read nodes only, so the converted graph has 32 KV access records and no KV writes."
     }
   }
 }
