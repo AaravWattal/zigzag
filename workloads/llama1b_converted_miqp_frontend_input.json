@@ -1,6 +1,7 @@
 {
+  "schema_version": "miqp_frontend_v0.1",
   "workload_name": "llama1b_converted",
-  "source_format": "external_llama_decoupled",
+  "source_format": "external_llama_raw_converted",
   "compute_nodes": [
     {
       "id": "node_layer_norm",

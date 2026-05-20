@@ -1,0 +1,294 @@
+{
+  "workload_name": "llama1b_decoupled",
+  "schema_version": "miqp_frontend_v0.1",
+  "source_format": "external_llama_decoupled",
+  "num_compute_nodes": 208,
+  "op_histogram": {
+    "Add": 31,
+    "LayerNormalization": 32,
+    "MatMul": 144,
+    "Mul": 1
+  },
+  "num_tensor_edges": 207,
+  "num_persistent_tensors": 177,
+  "tensor_category_histogram": {
+    "weights": 145,
+    "intermediate_activation": 0,
+    "kv_cache": 64
+  },
+  "tensor_category_bytes": {
+    "weights": 973146112,
+    "intermediate_activation": 0,
+    "kv_cache": 134217728
+  },
+  "memory_assignment_histogram": {
+    "LtRAM": 177,
+    "StRAM": 32
+  },
+  "memory_assignment_bytes": {
+    "LtRAM": 1040254976,
+    "StRAM": 67108864
+  },
+  "total_read_bytes": 1040254976,
+  "total_write_bytes": 67108864,
+  "top_20_tensors_by_read_bytes": [
+    {
+      "tensor": "layers.0.feed_forward.w1.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.0.feed_forward.w3.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.0.feed_forward.w2.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.1.feed_forward.w1.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.1.feed_forward.w3.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.1.feed_forward.w2.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.2.feed_forward.w1.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.2.feed_forward.w3.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.2.feed_forward.w2.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.3.feed_forward.w1.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.3.feed_forward.w3.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.3.feed_forward.w2.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.4.feed_forward.w1.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.4.feed_forward.w3.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.4.feed_forward.w2.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.5.feed_forward.w1.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.5.feed_forward.w3.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.5.feed_forward.w2.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.6.feed_forward.w1.0.weight",
+      "reads_bytes": 16777216
+    },
+    {
+      "tensor": "layers.6.feed_forward.w3.0.weight",
+      "reads_bytes": 16777216
+    }
+  ],
+  "top_20_tensors_by_write_bytes": [
+    {
+      "tensor": "layers.0.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.0.attention.cache_v_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.1.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.1.attention.cache_v_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.2.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.2.attention.cache_v_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.3.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.3.attention.cache_v_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.4.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.4.attention.cache_v_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.5.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.5.attention.cache_v_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.6.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.6.attention.cache_v_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.7.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.7.attention.cache_v_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.8.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.8.attention.cache_v_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.9.attention.cache_k_0",
+      "writes_bytes": 2097152
+    },
+    {
+      "tensor": "layers.9.attention.cache_v_0",
+      "writes_bytes": 2097152
+    }
+  ],
+  "top_20_ops_by_total_access_bytes": [
+    {
+      "op_id": "node_linear_4",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_5",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_6",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_11",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_12",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_13",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_18",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_19",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_20",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_25",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_26",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_27",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_32",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_33",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_34",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_39",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_40",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_41",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_46",
+      "total_access_bytes": 16777216
+    },
+    {
+      "op_id": "node_linear_47",
+      "total_access_bytes": 16777216
+    }
+  ],
+  "persistent_tensors_total": 177,
+  "persistent_tensors_with_accesses": 177,
+  "persistent_tensors_without_accesses": 0,
+  "persistent_tensors_without_access_ids": [],
+  "total_read_bytes_by_category": {
+    "weights": 973146112,
+    "intermediate_activation": 0,
+    "kv_cache": 67108864
+  },
+  "total_write_bytes_by_category": {
+    "weights": 0,
+    "intermediate_activation": 0,
+    "kv_cache": 67108864
+  }
+}

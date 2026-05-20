@@ -1,4 +1,5 @@
 {
+  "schema_version": "miqp_frontend_v0.1",
   "workload_name": "llama1b_decoupled",
   "source_format": "external_llama_decoupled",
   "compute_nodes": [

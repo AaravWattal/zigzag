@@ -10,13 +10,41 @@
     "MatMul": 144,
     "Mul": 1
   },
+  "persistent_tensor_category_histogram": {
+    "weights": 145,
+    "intermediate_activation": 0,
+    "kv_cache": 32
+  },
   "tensor_category_histogram": {
     "weights": 145,
     "intermediate_activation": 0,
     "kv_cache": 64
   },
+  "tensor_category_bytes": {
+    "weights": 973146112,
+    "intermediate_activation": 0,
+    "kv_cache": 134217728
+  },
   "memory_assignment_histogram": {
     "LtRAM": 177,
     "StRAM": 32
+  },
+  "memory_assignment_bytes": {
+    "LtRAM": 1040254976,
+    "StRAM": 67108864
+  },
+  "persistent_tensors_total": 177,
+  "persistent_tensors_with_accesses": 177,
+  "persistent_tensors_without_accesses": 0,
+  "persistent_tensors_without_access_ids": [],
+  "total_read_bytes_by_category": {
+    "weights": 973146112,
+    "intermediate_activation": 0,
+    "kv_cache": 67108864
+  },
+  "total_write_bytes_by_category": {
+    "weights": 0,
+    "intermediate_activation": 0,
+    "kv_cache": 67108864
   }
 }

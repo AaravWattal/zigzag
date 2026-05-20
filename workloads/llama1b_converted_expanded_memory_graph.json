@@ -8349,5 +8349,14 @@
     "weights": 145,
     "intermediate_activation": 0,
     "kv_cache": 32
+  },
+  "memory_assignment_bytes": {
+    "LtRAM": 1040254976,
+    "StRAM": 0
+  },
+  "tensor_category_bytes": {
+    "weights": 973146112,
+    "intermediate_activation": 0,
+    "kv_cache": 67108864
   }
 }
