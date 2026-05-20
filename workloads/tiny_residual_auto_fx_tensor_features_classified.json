@@ -15,6 +15,9 @@
     "lifetime": 1,
     "reuse_proxy": 2,
     "semantic_type": "activation",
+    "consumer_operand_roles": {
+      "1": "I"
+    },
     "metadata_consumer_ids": [
       "add"
     ],
@@ -41,6 +44,9 @@
     "lifetime": 1,
     "reuse_proxy": 1,
     "semantic_type": "activation",
+    "consumer_operand_roles": {
+      "2": "I"
+    },
     "reuse": 396,
     "class_id": 3,
     "class_name": "high_reuse_activation",

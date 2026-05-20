@@ -14,7 +14,10 @@
     "fanout": 1,
     "lifetime": 1,
     "reuse_proxy": 1,
-    "semantic_type": "activation"
+    "semantic_type": "activation",
+    "consumer_operand_roles": {
+      "1": "I"
+    }
   },
   {
     "tensor": "fc_O",

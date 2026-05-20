@@ -15,6 +15,9 @@
     "lifetime": 1,
     "reuse_proxy": 1,
     "semantic_type": "activation",
+    "consumer_operand_roles": {
+      "1": "I"
+    },
     "reuse": 396,
     "class_id": 3,
     "class_name": "high_reuse_activation",

@@ -1,0 +1,120 @@
+{
+  "workloads": [
+    {
+      "model": "two_conv",
+      "prefix": "two_conv_auto_fx",
+      "num_layers": 2,
+      "num_cmes": 2,
+      "energy": 1154749.608,
+      "latency": 4891.0,
+      "num_tensors": 2,
+      "max_lifetime": 1,
+      "max_fanout": 1,
+      "max_reuse": 396,
+      "class_histogram": {
+        "ephemeral_activation": 1,
+        "high_reuse_activation": 1
+      },
+      "yaml": "workloads/two_conv_auto_fx.yaml",
+      "cmes_pickle": "outputs/two_conv_auto_fx_20260519_222900/cmes.pickle",
+      "tensor_features": "workloads/two_conv_auto_fx_tensor_features.json",
+      "tensor_features_with_reuse": "workloads/two_conv_auto_fx_tensor_features_with_reuse.json",
+      "tensor_features_classified": "workloads/two_conv_auto_fx_tensor_features_classified.json",
+      "dump_folder": "outputs/two_conv_auto_fx_20260519_222900"
+    },
+    {
+      "model": "tiny_residual",
+      "prefix": "tiny_residual_auto_fx",
+      "num_layers": 3,
+      "num_cmes": 3,
+      "energy": 1462817.664,
+      "latency": 5147.0,
+      "num_tensors": 3,
+      "max_lifetime": 1,
+      "max_fanout": 2,
+      "max_reuse": 396,
+      "class_histogram": {
+        "ephemeral_activation": 1,
+        "high_reuse_activation": 2
+      },
+      "yaml": "workloads/tiny_residual_auto_fx.yaml",
+      "cmes_pickle": "outputs/tiny_residual_auto_fx_20260519_222903/cmes.pickle",
+      "tensor_features": "workloads/tiny_residual_auto_fx_tensor_features.json",
+      "tensor_features_with_reuse": "workloads/tiny_residual_auto_fx_tensor_features_with_reuse.json",
+      "tensor_features_classified": "workloads/tiny_residual_auto_fx_tensor_features_classified.json",
+      "dump_folder": "outputs/tiny_residual_auto_fx_20260519_222903"
+    },
+    {
+      "model": "one_linear",
+      "prefix": "one_linear_fx",
+      "num_layers": 1,
+      "num_cmes": 1,
+      "energy": 1600.74,
+      "latency": 511.0,
+      "num_tensors": 1,
+      "max_lifetime": 0,
+      "max_fanout": 0,
+      "max_reuse": 0,
+      "class_histogram": {
+        "ephemeral_activation": 1
+      },
+      "yaml": "workloads/one_linear_fx.yaml",
+      "cmes_pickle": "outputs/one_linear_fx_20260519_222906/cmes.pickle",
+      "tensor_features": "workloads/one_linear_fx_tensor_features.json",
+      "tensor_features_with_reuse": "workloads/one_linear_fx_tensor_features_with_reuse.json",
+      "tensor_features_classified": "workloads/one_linear_fx_tensor_features_classified.json",
+      "dump_folder": "outputs/one_linear_fx_20260519_222906"
+    },
+    {
+      "model": "tiny_cnn_linear",
+      "prefix": "tiny_cnn_linear_auto_fx",
+      "num_layers": 2,
+      "num_cmes": 2,
+      "energy": 3936202.696,
+      "latency": 25186.0,
+      "num_tensors": 2,
+      "max_lifetime": 1,
+      "max_fanout": 1,
+      "max_reuse": 320,
+      "class_histogram": {
+        "ephemeral_activation": 1,
+        "high_reuse_activation": 1
+      },
+      "yaml": "workloads/tiny_cnn_linear_auto_fx.yaml",
+      "cmes_pickle": "outputs/tiny_cnn_linear_auto_fx_20260519_222909/cmes.pickle",
+      "tensor_features": "workloads/tiny_cnn_linear_auto_fx_tensor_features.json",
+      "tensor_features_with_reuse": "workloads/tiny_cnn_linear_auto_fx_tensor_features_with_reuse.json",
+      "tensor_features_classified": "workloads/tiny_cnn_linear_auto_fx_tensor_features_classified.json",
+      "dump_folder": "outputs/tiny_cnn_linear_auto_fx_20260519_222909"
+    },
+    {
+      "model": "tiny_attention",
+      "prefix": "tiny_attention_auto_fx",
+      "num_layers": 6,
+      "num_cmes": 6,
+      "energy": 3612.04,
+      "latency": 1086.0,
+      "num_tensors": 7,
+      "max_lifetime": 3,
+      "max_fanout": 3,
+      "max_reuse": 4,
+      "class_histogram": {
+        "broadcast_activation": 1,
+        "ephemeral_activation": 3,
+        "standard_activation": 3
+      },
+      "yaml": "workloads/tiny_attention_auto_fx.yaml",
+      "cmes_pickle": "outputs/tiny_attention_auto_fx_20260519_222912/cmes.pickle",
+      "tensor_features": "workloads/tiny_attention_auto_fx_tensor_features.json",
+      "tensor_features_with_reuse": "workloads/tiny_attention_auto_fx_tensor_features_with_reuse.json",
+      "tensor_features_classified": "workloads/tiny_attention_auto_fx_tensor_features_classified.json",
+      "dump_folder": "outputs/tiny_attention_auto_fx_20260519_222912"
+    }
+  ],
+  "class_histogram": {
+    "broadcast_activation": 1,
+    "ephemeral_activation": 7,
+    "high_reuse_activation": 4,
+    "standard_activation": 3
+  }
+}
