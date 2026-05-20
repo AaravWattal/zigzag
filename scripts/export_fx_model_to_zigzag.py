@@ -27,15 +27,17 @@ class TwoConv(nn.Module):
 class TinyResidual(nn.Module):
     def __init__(self):
         super().__init__()
+        self.stem = nn.Conv2d(8, 8, 1)
         self.conv0 = nn.Conv2d(8, 8, 3, padding=1)
         self.relu = nn.ReLU()
         self.conv1 = nn.Conv2d(8, 8, 3, padding=1)
 
     def forward(self, x):
-        y = self.conv0(x)
+        residual = self.stem(x)
+        y = self.conv0(residual)
         y = self.relu(y)
         y = self.conv1(y)
-        return x + y
+        return residual + y
 
 
 class OneLinear(nn.Module):
@@ -157,6 +159,14 @@ def add_consumer(tensor_features, producer_layer_id, consumer_layer_id):
         consumers.append(consumer_layer_id)
 
 
+def add_metadata_consumer(tensor_features, producer_layer_id, consumer_name):
+    if producer_layer_id is None:
+        return
+    consumers = tensor_features[producer_layer_id].setdefault("metadata_consumer_ids", [])
+    if consumer_name not in consumers:
+        consumers.append(consumer_name)
+
+
 def first_node_arg(node):
     for arg in node.args:
         if isinstance(arg, fx.Node):
@@ -214,6 +224,8 @@ def export_model(model, example_input):
                 if isinstance(arg, fx.Node)
             ]
             real_inputs = [producer for producer in input_producers if producer is not None]
+            for producer in real_inputs:
+                add_metadata_consumer(tensor_features, producer, node.name)
             node_to_producer_layer[node] = real_inputs[0] if real_inputs else None
             continue
 
@@ -224,10 +236,13 @@ def export_model(model, example_input):
 
     for feature in tensor_features:
         consumers = sorted(feature["consumer_layer_ids"])
+        metadata_consumers = sorted(feature.get("metadata_consumer_ids", []))
         feature["consumer_layer_ids"] = consumers
-        feature["fanout"] = len(consumers)
+        if metadata_consumers:
+            feature["metadata_consumer_ids"] = metadata_consumers
+        feature["fanout"] = len(consumers) + len(metadata_consumers)
         feature["lifetime"] = max(consumers) - feature["producer_layer_id"] if consumers else 0
-        feature["reuse_proxy"] = len(consumers)
+        feature["reuse_proxy"] = feature["fanout"]
 
     return layers, tensor_features
 
