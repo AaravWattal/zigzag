@@ -1,0 +1,4084 @@
+{
+  "layers": [
+    {
+      "layer_id": "node_layer_norm",
+      "layer_name": "node_layer_norm",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear",
+      "layer_name": "node_linear",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_1",
+      "layer_name": "node_linear_1",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_2",
+      "layer_name": "node_linear_2",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul",
+      "layer_name": "node_matmul",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_1",
+      "layer_name": "node_matmul_1",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_3",
+      "layer_name": "node_linear_3",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add",
+      "layer_name": "node_add",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_1",
+      "layer_name": "node_layer_norm_1",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_4",
+      "layer_name": "node_linear_4",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_5",
+      "layer_name": "node_linear_5",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_6",
+      "layer_name": "node_linear_6",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.0.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_2",
+      "layer_name": "node_add_2",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_2",
+      "layer_name": "node_layer_norm_2",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_7",
+      "layer_name": "node_linear_7",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_8",
+      "layer_name": "node_linear_8",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_9",
+      "layer_name": "node_linear_9",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_2",
+      "layer_name": "node_matmul_2",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_3",
+      "layer_name": "node_matmul_3",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_10",
+      "layer_name": "node_linear_10",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_3",
+      "layer_name": "node_add_3",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_3",
+      "layer_name": "node_layer_norm_3",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_11",
+      "layer_name": "node_linear_11",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_12",
+      "layer_name": "node_linear_12",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_13",
+      "layer_name": "node_linear_13",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.1.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_5",
+      "layer_name": "node_add_5",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_4",
+      "layer_name": "node_layer_norm_4",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_14",
+      "layer_name": "node_linear_14",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_15",
+      "layer_name": "node_linear_15",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_16",
+      "layer_name": "node_linear_16",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_4",
+      "layer_name": "node_matmul_4",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_5",
+      "layer_name": "node_matmul_5",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_17",
+      "layer_name": "node_linear_17",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_6",
+      "layer_name": "node_add_6",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_5",
+      "layer_name": "node_layer_norm_5",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_18",
+      "layer_name": "node_linear_18",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_19",
+      "layer_name": "node_linear_19",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_20",
+      "layer_name": "node_linear_20",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.2.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_8",
+      "layer_name": "node_add_8",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_6",
+      "layer_name": "node_layer_norm_6",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_21",
+      "layer_name": "node_linear_21",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_22",
+      "layer_name": "node_linear_22",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_23",
+      "layer_name": "node_linear_23",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_6",
+      "layer_name": "node_matmul_6",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_7",
+      "layer_name": "node_matmul_7",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_24",
+      "layer_name": "node_linear_24",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_9",
+      "layer_name": "node_add_9",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_7",
+      "layer_name": "node_layer_norm_7",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_25",
+      "layer_name": "node_linear_25",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_26",
+      "layer_name": "node_linear_26",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_27",
+      "layer_name": "node_linear_27",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.3.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_11",
+      "layer_name": "node_add_11",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_8",
+      "layer_name": "node_layer_norm_8",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_28",
+      "layer_name": "node_linear_28",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_29",
+      "layer_name": "node_linear_29",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_30",
+      "layer_name": "node_linear_30",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_8",
+      "layer_name": "node_matmul_8",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_9",
+      "layer_name": "node_matmul_9",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_31",
+      "layer_name": "node_linear_31",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_12",
+      "layer_name": "node_add_12",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_9",
+      "layer_name": "node_layer_norm_9",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_32",
+      "layer_name": "node_linear_32",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_33",
+      "layer_name": "node_linear_33",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_34",
+      "layer_name": "node_linear_34",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.4.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_14",
+      "layer_name": "node_add_14",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_10",
+      "layer_name": "node_layer_norm_10",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_35",
+      "layer_name": "node_linear_35",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_36",
+      "layer_name": "node_linear_36",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_37",
+      "layer_name": "node_linear_37",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_10",
+      "layer_name": "node_matmul_10",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_11",
+      "layer_name": "node_matmul_11",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_38",
+      "layer_name": "node_linear_38",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_15",
+      "layer_name": "node_add_15",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_11",
+      "layer_name": "node_layer_norm_11",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_39",
+      "layer_name": "node_linear_39",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_40",
+      "layer_name": "node_linear_40",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_41",
+      "layer_name": "node_linear_41",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.5.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_17",
+      "layer_name": "node_add_17",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_12",
+      "layer_name": "node_layer_norm_12",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_42",
+      "layer_name": "node_linear_42",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_43",
+      "layer_name": "node_linear_43",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_44",
+      "layer_name": "node_linear_44",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_12",
+      "layer_name": "node_matmul_12",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_13",
+      "layer_name": "node_matmul_13",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_45",
+      "layer_name": "node_linear_45",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_18",
+      "layer_name": "node_add_18",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_13",
+      "layer_name": "node_layer_norm_13",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_46",
+      "layer_name": "node_linear_46",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_47",
+      "layer_name": "node_linear_47",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_48",
+      "layer_name": "node_linear_48",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.6.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_20",
+      "layer_name": "node_add_20",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_14",
+      "layer_name": "node_layer_norm_14",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_49",
+      "layer_name": "node_linear_49",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_50",
+      "layer_name": "node_linear_50",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_51",
+      "layer_name": "node_linear_51",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_14",
+      "layer_name": "node_matmul_14",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_15",
+      "layer_name": "node_matmul_15",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_52",
+      "layer_name": "node_linear_52",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_21",
+      "layer_name": "node_add_21",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_15",
+      "layer_name": "node_layer_norm_15",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_53",
+      "layer_name": "node_linear_53",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_54",
+      "layer_name": "node_linear_54",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_55",
+      "layer_name": "node_linear_55",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.7.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_23",
+      "layer_name": "node_add_23",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_16",
+      "layer_name": "node_layer_norm_16",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_56",
+      "layer_name": "node_linear_56",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_57",
+      "layer_name": "node_linear_57",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_58",
+      "layer_name": "node_linear_58",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_16",
+      "layer_name": "node_matmul_16",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_17",
+      "layer_name": "node_matmul_17",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_59",
+      "layer_name": "node_linear_59",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_24",
+      "layer_name": "node_add_24",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_17",
+      "layer_name": "node_layer_norm_17",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_60",
+      "layer_name": "node_linear_60",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_61",
+      "layer_name": "node_linear_61",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_62",
+      "layer_name": "node_linear_62",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.8.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_26",
+      "layer_name": "node_add_26",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_18",
+      "layer_name": "node_layer_norm_18",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_63",
+      "layer_name": "node_linear_63",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_64",
+      "layer_name": "node_linear_64",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_65",
+      "layer_name": "node_linear_65",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_18",
+      "layer_name": "node_matmul_18",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_19",
+      "layer_name": "node_matmul_19",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_66",
+      "layer_name": "node_linear_66",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_27",
+      "layer_name": "node_add_27",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_19",
+      "layer_name": "node_layer_norm_19",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_67",
+      "layer_name": "node_linear_67",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_68",
+      "layer_name": "node_linear_68",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_69",
+      "layer_name": "node_linear_69",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.9.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_29",
+      "layer_name": "node_add_29",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_20",
+      "layer_name": "node_layer_norm_20",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_70",
+      "layer_name": "node_linear_70",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_71",
+      "layer_name": "node_linear_71",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_72",
+      "layer_name": "node_linear_72",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_20",
+      "layer_name": "node_matmul_20",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_21",
+      "layer_name": "node_matmul_21",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_73",
+      "layer_name": "node_linear_73",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_30",
+      "layer_name": "node_add_30",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_21",
+      "layer_name": "node_layer_norm_21",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_74",
+      "layer_name": "node_linear_74",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_75",
+      "layer_name": "node_linear_75",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_76",
+      "layer_name": "node_linear_76",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.10.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_32",
+      "layer_name": "node_add_32",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_22",
+      "layer_name": "node_layer_norm_22",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_77",
+      "layer_name": "node_linear_77",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_78",
+      "layer_name": "node_linear_78",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_79",
+      "layer_name": "node_linear_79",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_22",
+      "layer_name": "node_matmul_22",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_23",
+      "layer_name": "node_matmul_23",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_80",
+      "layer_name": "node_linear_80",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_33",
+      "layer_name": "node_add_33",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_23",
+      "layer_name": "node_layer_norm_23",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_81",
+      "layer_name": "node_linear_81",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_82",
+      "layer_name": "node_linear_82",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_83",
+      "layer_name": "node_linear_83",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.11.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_35",
+      "layer_name": "node_add_35",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_24",
+      "layer_name": "node_layer_norm_24",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_84",
+      "layer_name": "node_linear_84",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_85",
+      "layer_name": "node_linear_85",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_86",
+      "layer_name": "node_linear_86",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_24",
+      "layer_name": "node_matmul_24",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_25",
+      "layer_name": "node_matmul_25",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_87",
+      "layer_name": "node_linear_87",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_36",
+      "layer_name": "node_add_36",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_25",
+      "layer_name": "node_layer_norm_25",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_88",
+      "layer_name": "node_linear_88",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_89",
+      "layer_name": "node_linear_89",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_90",
+      "layer_name": "node_linear_90",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.12.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_38",
+      "layer_name": "node_add_38",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_26",
+      "layer_name": "node_layer_norm_26",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_91",
+      "layer_name": "node_linear_91",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_92",
+      "layer_name": "node_linear_92",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_93",
+      "layer_name": "node_linear_93",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_26",
+      "layer_name": "node_matmul_26",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_27",
+      "layer_name": "node_matmul_27",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_94",
+      "layer_name": "node_linear_94",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_39",
+      "layer_name": "node_add_39",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_27",
+      "layer_name": "node_layer_norm_27",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_95",
+      "layer_name": "node_linear_95",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_96",
+      "layer_name": "node_linear_96",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_97",
+      "layer_name": "node_linear_97",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.13.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_41",
+      "layer_name": "node_add_41",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_28",
+      "layer_name": "node_layer_norm_28",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_98",
+      "layer_name": "node_linear_98",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_99",
+      "layer_name": "node_linear_99",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_100",
+      "layer_name": "node_linear_100",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_28",
+      "layer_name": "node_matmul_28",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_29",
+      "layer_name": "node_matmul_29",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_101",
+      "layer_name": "node_linear_101",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_42",
+      "layer_name": "node_add_42",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_29",
+      "layer_name": "node_layer_norm_29",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_102",
+      "layer_name": "node_linear_102",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_103",
+      "layer_name": "node_linear_103",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_104",
+      "layer_name": "node_linear_104",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.14.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_44",
+      "layer_name": "node_add_44",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_30",
+      "layer_name": "node_layer_norm_30",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.attention_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_105",
+      "layer_name": "node_linear_105",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.attention.wq.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_106",
+      "layer_name": "node_linear_106",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.attention.wk.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_107",
+      "layer_name": "node_linear_107",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.attention.wv.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1048576,
+            "writes_up": 0,
+            "total_reads": 1048576,
+            "total_writes": 0,
+            "total_movement": 1048576
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_30",
+      "layer_name": "node_matmul_30",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.attention.cache_k_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_matmul_31",
+      "layer_name": "node_matmul_31",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.attention.cache_v_0",
+            "tensor_category": "kv_cache",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2097152,
+            "writes_up": 0,
+            "total_reads": 2097152,
+            "total_writes": 0,
+            "total_movement": 2097152
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_108",
+      "layer_name": "node_linear_108",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.attention.wo.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4194304,
+            "writes_up": 0,
+            "total_reads": 4194304,
+            "total_writes": 0,
+            "total_movement": 4194304
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_add_45",
+      "layer_name": "node_add_45",
+      "operator_type": "Add",
+      "operands": {}
+    },
+    {
+      "layer_id": "node_layer_norm_31",
+      "layer_name": "node_layer_norm_31",
+      "operator_type": "LayerNormalization",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.ffn_norm.bias",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_109",
+      "layer_name": "node_linear_109",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.feed_forward.w1.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_110",
+      "layer_name": "node_linear_110",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.feed_forward.w3.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_linear_111",
+      "layer_name": "node_linear_111",
+      "operator_type": "MatMul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "layers.15.feed_forward.w2.0.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16777216,
+            "writes_up": 0,
+            "total_reads": 16777216,
+            "total_writes": 0,
+            "total_movement": 16777216
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": "node_mul_17",
+      "layer_name": "node_mul_17",
+      "operator_type": "Mul",
+      "operands": {
+        "external": [
+          {
+            "level": "external_declared",
+            "tensor": "norm.weight",
+            "tensor_category": "weights",
+            "phase": "any",
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2048,
+            "writes_up": 0,
+            "total_reads": 2048,
+            "total_writes": 0,
+            "total_movement": 2048
+          }
+        ]
+      }
+    }
+  ]
+}
