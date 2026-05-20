@@ -87,6 +87,13 @@ def normalized_histogram(counter, keys):
     return {key: counter.get(key, 0) for key in keys}
 
 
+def first_existing_path(*paths):
+    for path in paths:
+        if (REPO_ROOT / path).exists():
+            return path
+    raise FileNotFoundError(f"None of these paths exist: {paths}")
+
+
 def iter_accesses(graph):
     for node in graph.get("nodes", []):
         yield from node.get("memory_accesses", [])
@@ -240,9 +247,54 @@ def run_workload(config):
     )
 
 
+def run_llama_imports():
+    decoupled_input = first_existing_path("workloads/llama1b_decoupled.json", "llama1b_decoupled.json")
+    raw_input = first_existing_path("workloads/llama1b.json", "llama1b.json")
+    converted_path = "workloads/llama1b_converted_decoupled.json"
+
+    decoupled_stdout = run_command(
+        [
+            sys.executable,
+            "scripts/import_external_llama_graph.py",
+            "--input",
+            decoupled_input,
+            "--name",
+            "llama1b_decoupled",
+        ]
+    )
+
+    run_command(
+        [
+            sys.executable,
+            "scripts/convert_llama_raw_to_decoupled.py",
+            "--input",
+            raw_input,
+            "--output",
+            converted_path,
+        ]
+    )
+
+    converted_stdout = run_command(
+        [
+            sys.executable,
+            "scripts/import_external_llama_graph.py",
+            "--input",
+            converted_path,
+            "--name",
+            "llama1b_converted",
+        ]
+    )
+
+    return {
+        "llama1b_decoupled": parse_last_json_object(decoupled_stdout),
+        "llama1b_converted": parse_last_json_object(converted_stdout),
+    }
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", default="workloads/frontend_regression_summary.json")
+    parser.add_argument("--include-llama", action="store_true")
     args = parser.parse_args()
 
     summaries = [run_workload(config) for config in TOY_WORKLOADS]
@@ -277,6 +329,8 @@ def main():
             TENSOR_CATEGORIES,
         ),
     }
+    if args.include_llama:
+        output["external_llama"] = run_llama_imports()
 
     out_path = REPO_ROOT / args.output
     out_path.parent.mkdir(parents=True, exist_ok=True)
