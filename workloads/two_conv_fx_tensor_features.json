@@ -1,0 +1,22 @@
+[
+  {
+    "tensor": "conv0_O",
+    "producer_layer_id": 0,
+    "consumer_layer_ids": [
+      1
+    ],
+    "fanout": 1,
+    "lifetime": 1,
+    "reuse_proxy": 1,
+    "semantic_type": "activation"
+  },
+  {
+    "tensor": "conv1_O",
+    "producer_layer_id": 1,
+    "consumer_layer_ids": [],
+    "fanout": 0,
+    "lifetime": 0,
+    "reuse_proxy": 0,
+    "semantic_type": "activation"
+  }
+]
