@@ -60,10 +60,12 @@ def augment_tensor_features(features, cmes):
     for feature in features:
         feature = dict(feature)
         reuse = 0
+        operand_roles = feature.get("consumer_operand_roles", {})
         for consumer_layer_id in feature.get("consumer_layer_ids", []):
             if consumer_layer_id >= len(cmes):
                 continue
-            reuse += operand_reads(cmes[consumer_layer_id], "I")
+            operand = operand_roles.get(str(consumer_layer_id), "I")
+            reuse += operand_reads(cmes[consumer_layer_id], operand)
         feature["reuse"] = reuse
         augmented.append(feature)
 

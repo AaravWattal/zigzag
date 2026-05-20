@@ -65,6 +65,25 @@ class TinyCNNLinear(nn.Module):
         return x
 
 
+class TinyAttention(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.q = nn.Linear(16, 16)
+        self.k = nn.Linear(16, 16)
+        self.v = nn.Linear(16, 16)
+        self.proj = nn.Linear(16, 16)
+        self.softmax = nn.Softmax(dim=-1)
+
+    def forward(self, x):
+        q = self.q(x)
+        k = self.k(x)
+        v = self.v(x)
+        scores = torch.matmul(q, k.transpose(-2, -1))
+        weights = self.softmax(scores)
+        out = torch.matmul(weights, v)
+        return self.proj(out)
+
+
 def tensor_shape(node):
     meta = node.meta.get("tensor_meta")
     if meta is None:
@@ -73,6 +92,8 @@ def tensor_shape(node):
 
 
 def normalize_source(input_source):
+    if isinstance(input_source, tuple) and input_source[0] == "external":
+        return 0
     return 0 if input_source is None else input_source
 
 
@@ -108,6 +129,30 @@ def conv2d_to_zigzag(layer_id, name, module, node, input_source):
     }
 
 
+def gemm_to_zigzag(layer_id, name, d0, d1, d2, input_source, weight_source):
+    operand_source = {
+        "I": normalize_source(input_source),
+        "W": normalize_source(weight_source),
+    }
+
+    return {
+        "id": layer_id,
+        "name": name,
+        "operator_type": "Gemm",
+        "equation": "O[d0][d1]+=I[d0][d2]*W[d2][d1]",
+        "dimension_relations": [],
+        "loop_dims": ["D0", "D1", "D2"],
+        "loop_sizes": [d0, d1, d2],
+        "operand_precision": {
+            "W": 8,
+            "I": 8,
+            "O": 16,
+            "O_final": 8,
+        },
+        "operand_source": operand_source,
+    }
+
+
 def linear_to_zigzag(layer_id, name, module, node, input_source):
     out_shape = tensor_shape(node)
     if len(out_shape) < 2:
@@ -117,25 +162,24 @@ def linear_to_zigzag(layer_id, name, module, node, input_source):
     for dim in out_shape[:-1]:
         batch *= dim
 
-    return {
-        "id": layer_id,
-        "name": name,
-        "operator_type": "Gemm",
-        "equation": "O[d0][d1]+=I[d0][d2]*W[d2][d1]",
-        "dimension_relations": [],
-        "loop_dims": ["D0", "D1", "D2"],
-        "loop_sizes": [batch, module.out_features, module.in_features],
-        "operand_precision": {
-            "W": 8,
-            "I": 8,
-            "O": 16,
-            "O_final": 8,
-        },
-        "operand_source": {
-            "I": normalize_source(input_source),
-            "W": 0,
-        },
-    }
+    return gemm_to_zigzag(layer_id, name, batch, module.out_features, module.in_features, input_source, None)
+
+
+def matmul_to_zigzag(layer_id, name, node, input_source, weight_source):
+    lhs_shape = tensor_shape(node.args[0])
+    rhs_shape = tensor_shape(node.args[1])
+    out_shape = tensor_shape(node)
+
+    d0 = 1
+    for dim in lhs_shape[:-1]:
+        d0 *= dim
+
+    d1 = out_shape[-1]
+    d2 = lhs_shape[-1]
+    if rhs_shape[-2] != d2:
+        raise RuntimeError(f"MatMul inner dimension mismatch for {node.name}: {lhs_shape} x {rhs_shape}")
+
+    return gemm_to_zigzag(layer_id, name, d0, d1, d2, input_source, weight_source)
 
 
 def make_tensor_feature(layer_name, layer_id, out_shape):
@@ -151,18 +195,36 @@ def make_tensor_feature(layer_name, layer_id, out_shape):
     }
 
 
-def add_consumer(tensor_features, producer_layer_id, consumer_layer_id):
+def add_consumer(tensor_features, producer_layer_id, consumer_layer_id, operand="I"):
     if producer_layer_id is None:
         return
-    consumers = tensor_features[producer_layer_id]["consumer_layer_ids"]
+    if isinstance(producer_layer_id, tuple):
+        return
+    feature = tensor_features[producer_layer_id]
+    consumers = feature["consumer_layer_ids"]
     if consumer_layer_id not in consumers:
         consumers.append(consumer_layer_id)
+    feature.setdefault("consumer_operand_roles", {})[str(consumer_layer_id)] = operand
 
 
-def add_metadata_consumer(tensor_features, producer_layer_id, consumer_name):
+def add_external_consumer(external_features, producer, consumer_layer_id, operand="I"):
+    if not isinstance(producer, tuple) or producer[0] != "external":
+        return
+    feature = external_features[producer[1]]
+    consumers = feature["consumer_layer_ids"]
+    if consumer_layer_id not in consumers:
+        consumers.append(consumer_layer_id)
+    feature.setdefault("consumer_operand_roles", {})[str(consumer_layer_id)] = operand
+
+
+def add_metadata_consumer(tensor_features, external_features, producer_layer_id, consumer_name):
     if producer_layer_id is None:
         return
-    consumers = tensor_features[producer_layer_id].setdefault("metadata_consumer_ids", [])
+    if isinstance(producer_layer_id, tuple):
+        feature = external_features[producer_layer_id[1]]
+    else:
+        feature = tensor_features[producer_layer_id]
+    consumers = feature.setdefault("metadata_consumer_ids", [])
     if consumer_name not in consumers:
         consumers.append(consumer_name)
 
@@ -174,18 +236,40 @@ def first_node_arg(node):
     raise RuntimeError(f"Node {node.name} has no FX node input")
 
 
-def export_model(model, example_input):
+def is_matmul_node(node):
+    target = node.target
+    return target in {torch.matmul, operator.matmul} or getattr(target, "__name__", None) == "matmul"
+
+
+def export_model(model, example_input, include_external_inputs=False):
     gm = fx.symbolic_trace(model.eval())
     ShapeProp(gm).propagate(example_input)
     modules = dict(gm.named_modules())
 
     layers = []
     tensor_features = []
+    external_features = []
     node_to_producer_layer = {}
 
     for node in gm.graph.nodes:
         if node.op == "placeholder":
-            node_to_producer_layer[node] = None
+            if include_external_inputs:
+                external_id = len(external_features)
+                external_features.append(
+                    {
+                        "tensor": node.name,
+                        "producer_layer_id": None,
+                        "consumer_layer_ids": [],
+                        "shape": list(tensor_shape(node)),
+                        "fanout": 0,
+                        "lifetime": 0,
+                        "reuse_proxy": 0,
+                        "semantic_type": "input",
+                    }
+                )
+                node_to_producer_layer[node] = ("external", external_id)
+            else:
+                node_to_producer_layer[node] = None
             continue
 
         if node.op == "call_module":
@@ -198,7 +282,8 @@ def export_model(model, example_input):
                 layer_name = str(node.target)
                 layers.append(conv2d_to_zigzag(layer_id, layer_name, module, node, input_producer))
                 tensor_features.append(make_tensor_feature(layer_name, layer_id, tensor_shape(node)))
-                add_consumer(tensor_features, input_producer, layer_id)
+                add_consumer(tensor_features, input_producer, layer_id, "I")
+                add_external_consumer(external_features, input_producer, layer_id, "I")
                 node_to_producer_layer[node] = layer_id
                 continue
 
@@ -207,11 +292,12 @@ def export_model(model, example_input):
                 layer_name = str(node.target)
                 layers.append(linear_to_zigzag(layer_id, layer_name, module, node, input_producer))
                 tensor_features.append(make_tensor_feature(layer_name, layer_id, tensor_shape(node)))
-                add_consumer(tensor_features, input_producer, layer_id)
+                add_consumer(tensor_features, input_producer, layer_id, "I")
+                add_external_consumer(external_features, input_producer, layer_id, "I")
                 node_to_producer_layer[node] = layer_id
                 continue
 
-            if isinstance(module, (nn.ReLU, nn.Flatten)):
+            if isinstance(module, (nn.ReLU, nn.Flatten, nn.Softmax)):
                 node_to_producer_layer[node] = input_producer
                 continue
 
@@ -225,14 +311,45 @@ def export_model(model, example_input):
             ]
             real_inputs = [producer for producer in input_producers if producer is not None]
             for producer in real_inputs:
-                add_metadata_consumer(tensor_features, producer, node.name)
+                add_metadata_consumer(tensor_features, external_features, producer, node.name)
             node_to_producer_layer[node] = real_inputs[0] if real_inputs else None
+            continue
+
+        if node.op == "call_function" and is_matmul_node(node):
+            lhs, rhs = node.args[:2]
+            if not isinstance(lhs, fx.Node) or not isinstance(rhs, fx.Node):
+                raise RuntimeError(f"MatMul {node.name} expects FX node inputs")
+            input_producer = node_to_producer_layer[lhs]
+            weight_producer = node_to_producer_layer[rhs]
+            layer_id = len(layers)
+            layers.append(matmul_to_zigzag(layer_id, node.name, node, input_producer, weight_producer))
+            tensor_features.append(make_tensor_feature(node.name, layer_id, tensor_shape(node)))
+            add_consumer(tensor_features, input_producer, layer_id, "I")
+            add_consumer(tensor_features, weight_producer, layer_id, "W")
+            add_external_consumer(external_features, input_producer, layer_id, "I")
+            add_external_consumer(external_features, weight_producer, layer_id, "W")
+            node_to_producer_layer[node] = layer_id
+            continue
+
+        if node.op == "call_method" and node.target in {"transpose", "permute", "reshape", "view", "flatten"}:
+            input_node = first_node_arg(node)
+            node_to_producer_layer[node] = node_to_producer_layer[input_node]
             continue
 
         if node.op == "output":
             continue
 
         raise NotImplementedError(f"Unsupported FX node {node.op} {node.target}")
+
+    for feature in external_features:
+        consumers = sorted(feature["consumer_layer_ids"])
+        metadata_consumers = sorted(feature.get("metadata_consumer_ids", []))
+        feature["consumer_layer_ids"] = consumers
+        if metadata_consumers:
+            feature["metadata_consumer_ids"] = metadata_consumers
+        feature["fanout"] = len(consumers) + len(metadata_consumers)
+        feature["lifetime"] = max(consumers) if consumers else 0
+        feature["reuse_proxy"] = feature["fanout"]
 
     for feature in tensor_features:
         consumers = sorted(feature["consumer_layer_ids"])
@@ -244,18 +361,20 @@ def export_model(model, example_input):
         feature["lifetime"] = max(consumers) - feature["producer_layer_id"] if consumers else 0
         feature["reuse_proxy"] = feature["fanout"]
 
-    return layers, tensor_features
+    return layers, external_features + tensor_features
 
 
 def build_model(name):
     if name == "two_conv":
-        return TwoConv(), torch.randn(1, 3, 16, 16), "two_conv_auto_fx"
+        return TwoConv(), torch.randn(1, 3, 16, 16), "two_conv_auto_fx", False
     if name == "tiny_residual":
-        return TinyResidual(), torch.randn(1, 8, 16, 16), "tiny_residual_auto_fx"
+        return TinyResidual(), torch.randn(1, 8, 16, 16), "tiny_residual_auto_fx", False
     if name == "one_linear":
-        return OneLinear(), torch.randn(1, 64), "one_linear_fx"
+        return OneLinear(), torch.randn(1, 64), "one_linear_fx", False
     if name == "tiny_cnn_linear":
-        return TinyCNNLinear(), torch.randn(1, 3, 16, 16), "tiny_cnn_linear_auto_fx"
+        return TinyCNNLinear(), torch.randn(1, 3, 16, 16), "tiny_cnn_linear_auto_fx", False
+    if name == "tiny_attention":
+        return TinyAttention(), torch.randn(1, 4, 16), "tiny_attention_auto_fx", True
     raise ValueError(f"Unknown model {name}")
 
 
@@ -263,16 +382,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--model",
-        choices=["two_conv", "tiny_residual", "one_linear", "tiny_cnn_linear"],
+        choices=["two_conv", "tiny_residual", "one_linear", "tiny_cnn_linear", "tiny_attention"],
         default="two_conv",
     )
     parser.add_argument("--out-prefix", default=None)
     args = parser.parse_args()
 
-    model, example_input, default_prefix = build_model(args.model)
+    model, example_input, default_prefix, include_external_inputs = build_model(args.model)
     out_prefix = args.out_prefix or default_prefix
 
-    layers, tensor_features = export_model(model, example_input)
+    layers, tensor_features = export_model(model, example_input, include_external_inputs=include_external_inputs)
 
     out_dir = Path("workloads")
     out_dir.mkdir(exist_ok=True)

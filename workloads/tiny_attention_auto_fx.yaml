@@ -1,0 +1,126 @@
+- id: 0
+  name: q
+  operator_type: Gemm
+  equation: O[d0][d1]+=I[d0][d2]*W[d2][d1]
+  dimension_relations: []
+  loop_dims:
+  - D0
+  - D1
+  - D2
+  loop_sizes:
+  - 4
+  - 16
+  - 16
+  operand_precision:
+    W: 8
+    I: 8
+    O: 16
+    O_final: 8
+  operand_source:
+    I: 0
+    W: 0
+- id: 1
+  name: k
+  operator_type: Gemm
+  equation: O[d0][d1]+=I[d0][d2]*W[d2][d1]
+  dimension_relations: []
+  loop_dims:
+  - D0
+  - D1
+  - D2
+  loop_sizes:
+  - 4
+  - 16
+  - 16
+  operand_precision:
+    W: 8
+    I: 8
+    O: 16
+    O_final: 8
+  operand_source:
+    I: 0
+    W: 0
+- id: 2
+  name: v
+  operator_type: Gemm
+  equation: O[d0][d1]+=I[d0][d2]*W[d2][d1]
+  dimension_relations: []
+  loop_dims:
+  - D0
+  - D1
+  - D2
+  loop_sizes:
+  - 4
+  - 16
+  - 16
+  operand_precision:
+    W: 8
+    I: 8
+    O: 16
+    O_final: 8
+  operand_source:
+    I: 0
+    W: 0
+- id: 3
+  name: matmul
+  operator_type: Gemm
+  equation: O[d0][d1]+=I[d0][d2]*W[d2][d1]
+  dimension_relations: []
+  loop_dims:
+  - D0
+  - D1
+  - D2
+  loop_sizes:
+  - 4
+  - 4
+  - 16
+  operand_precision:
+    W: 8
+    I: 8
+    O: 16
+    O_final: 8
+  operand_source:
+    I: 0
+    W: 1
+- id: 4
+  name: matmul_1
+  operator_type: Gemm
+  equation: O[d0][d1]+=I[d0][d2]*W[d2][d1]
+  dimension_relations: []
+  loop_dims:
+  - D0
+  - D1
+  - D2
+  loop_sizes:
+  - 4
+  - 16
+  - 4
+  operand_precision:
+    W: 8
+    I: 8
+    O: 16
+    O_final: 8
+  operand_source:
+    I: 3
+    W: 2
+- id: 5
+  name: proj
+  operator_type: Gemm
+  equation: O[d0][d1]+=I[d0][d2]*W[d2][d1]
+  dimension_relations: []
+  loop_dims:
+  - D0
+  - D1
+  - D2
+  loop_sizes:
+  - 4
+  - 16
+  - 16
+  operand_precision:
+    W: 8
+    I: 8
+    O: 16
+    O_final: 8
+  operand_source:
+    I: 4
+    W: 0
