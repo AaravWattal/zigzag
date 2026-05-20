@@ -1,0 +1,6539 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+        {
+            "name": "node_layer_norm",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm"
+        },
+        {
+            "name": "node_Transpose_0",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_0"
+        },
+        {
+            "name": "node_linear",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear"
+        },
+        {
+            "name": "node_Transpose_1",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1"
+        },
+        {
+            "name": "node_linear_1",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_1"
+        },
+        {
+            "name": "node_Transpose_2",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_2"
+        },
+        {
+            "name": "node_linear_2",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_2"
+        },
+        {
+            "name": "node_slice_1",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_1"
+        },
+        {
+            "name": "node_slice_5",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_5"
+        },
+        {
+            "name": "node_matmul",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul"
+        },
+        {
+            "name": "node_matmul_1",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_1"
+        },
+        {
+            "name": "node_Transpose_77",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_77"
+        },
+        {
+            "name": "node_linear_3",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_3"
+        },
+        {
+            "name": "node_add",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add"
+        },
+        {
+            "name": "node_layer_norm_1",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_1"
+        },
+        {
+            "name": "node_Transpose_84",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_84"
+        },
+        {
+            "name": "node_linear_4",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_4"
+        },
+        {
+            "name": "node_Transpose_86",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_86"
+        },
+        {
+            "name": "node_linear_5",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_5"
+        },
+        {
+            "name": "node_Transpose_87",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.0.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_87"
+        },
+        {
+            "name": "node_linear_6",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_6"
+        },
+        {
+            "name": "node_add_2",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_2"
+        },
+        {
+            "name": "node_layer_norm_2",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_2"
+        },
+        {
+            "name": "node_Transpose_88",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_88"
+        },
+        {
+            "name": "node_linear_7",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_7"
+        },
+        {
+            "name": "node_Transpose_89",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_89"
+        },
+        {
+            "name": "node_linear_8",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_8"
+        },
+        {
+            "name": "node_Transpose_90",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_90"
+        },
+        {
+            "name": "node_linear_9",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_9"
+        },
+        {
+            "name": "node_slice_9",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_9"
+        },
+        {
+            "name": "node_slice_13",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_13"
+        },
+        {
+            "name": "node_matmul_2",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_2"
+        },
+        {
+            "name": "node_matmul_3",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_3"
+        },
+        {
+            "name": "node_Transpose_154",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_154"
+        },
+        {
+            "name": "node_linear_10",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_10"
+        },
+        {
+            "name": "node_add_3",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_3"
+        },
+        {
+            "name": "node_layer_norm_3",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_3"
+        },
+        {
+            "name": "node_Transpose_160",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_160"
+        },
+        {
+            "name": "node_linear_11",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_11"
+        },
+        {
+            "name": "node_Transpose_162",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_162"
+        },
+        {
+            "name": "node_linear_12",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_12"
+        },
+        {
+            "name": "node_Transpose_163",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.1.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_163"
+        },
+        {
+            "name": "node_linear_13",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_13"
+        },
+        {
+            "name": "node_add_5",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_5"
+        },
+        {
+            "name": "node_layer_norm_4",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_4"
+        },
+        {
+            "name": "node_Transpose_164",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_164"
+        },
+        {
+            "name": "node_linear_14",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_14"
+        },
+        {
+            "name": "node_Transpose_165",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_165"
+        },
+        {
+            "name": "node_linear_15",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_15"
+        },
+        {
+            "name": "node_Transpose_166",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_166"
+        },
+        {
+            "name": "node_linear_16",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_16"
+        },
+        {
+            "name": "node_slice_17",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_17"
+        },
+        {
+            "name": "node_slice_21",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_21"
+        },
+        {
+            "name": "node_matmul_4",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_4"
+        },
+        {
+            "name": "node_matmul_5",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_5"
+        },
+        {
+            "name": "node_Transpose_230",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_230"
+        },
+        {
+            "name": "node_linear_17",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_17"
+        },
+        {
+            "name": "node_add_6",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_6"
+        },
+        {
+            "name": "node_layer_norm_5",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_5"
+        },
+        {
+            "name": "node_Transpose_236",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_236"
+        },
+        {
+            "name": "node_linear_18",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_18"
+        },
+        {
+            "name": "node_Transpose_238",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_238"
+        },
+        {
+            "name": "node_linear_19",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_19"
+        },
+        {
+            "name": "node_Transpose_239",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.2.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_239"
+        },
+        {
+            "name": "node_linear_20",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_20"
+        },
+        {
+            "name": "node_add_8",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_8"
+        },
+        {
+            "name": "node_layer_norm_6",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_6"
+        },
+        {
+            "name": "node_Transpose_240",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_240"
+        },
+        {
+            "name": "node_linear_21",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_21"
+        },
+        {
+            "name": "node_Transpose_241",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_241"
+        },
+        {
+            "name": "node_linear_22",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_22"
+        },
+        {
+            "name": "node_Transpose_242",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_242"
+        },
+        {
+            "name": "node_linear_23",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_23"
+        },
+        {
+            "name": "node_slice_25",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_25"
+        },
+        {
+            "name": "node_slice_29",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_29"
+        },
+        {
+            "name": "node_matmul_6",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_6"
+        },
+        {
+            "name": "node_matmul_7",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_7"
+        },
+        {
+            "name": "node_Transpose_306",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_306"
+        },
+        {
+            "name": "node_linear_24",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_24"
+        },
+        {
+            "name": "node_add_9",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_9"
+        },
+        {
+            "name": "node_layer_norm_7",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_7"
+        },
+        {
+            "name": "node_Transpose_312",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_312"
+        },
+        {
+            "name": "node_linear_25",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_25"
+        },
+        {
+            "name": "node_Transpose_314",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_314"
+        },
+        {
+            "name": "node_linear_26",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_26"
+        },
+        {
+            "name": "node_Transpose_315",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.3.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_315"
+        },
+        {
+            "name": "node_linear_27",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_27"
+        },
+        {
+            "name": "node_add_11",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_11"
+        },
+        {
+            "name": "node_layer_norm_8",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_8"
+        },
+        {
+            "name": "node_Transpose_316",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_316"
+        },
+        {
+            "name": "node_linear_28",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_28"
+        },
+        {
+            "name": "node_Transpose_317",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_317"
+        },
+        {
+            "name": "node_linear_29",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_29"
+        },
+        {
+            "name": "node_Transpose_318",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_318"
+        },
+        {
+            "name": "node_linear_30",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_30"
+        },
+        {
+            "name": "node_slice_33",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_33"
+        },
+        {
+            "name": "node_slice_37",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_37"
+        },
+        {
+            "name": "node_matmul_8",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_8"
+        },
+        {
+            "name": "node_matmul_9",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_9"
+        },
+        {
+            "name": "node_Transpose_382",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_382"
+        },
+        {
+            "name": "node_linear_31",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_31"
+        },
+        {
+            "name": "node_add_12",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_12"
+        },
+        {
+            "name": "node_layer_norm_9",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_9"
+        },
+        {
+            "name": "node_Transpose_388",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_388"
+        },
+        {
+            "name": "node_linear_32",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_32"
+        },
+        {
+            "name": "node_Transpose_390",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_390"
+        },
+        {
+            "name": "node_linear_33",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_33"
+        },
+        {
+            "name": "node_Transpose_391",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.4.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_391"
+        },
+        {
+            "name": "node_linear_34",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_34"
+        },
+        {
+            "name": "node_add_14",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_14"
+        },
+        {
+            "name": "node_layer_norm_10",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_10"
+        },
+        {
+            "name": "node_Transpose_392",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_392"
+        },
+        {
+            "name": "node_linear_35",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_35"
+        },
+        {
+            "name": "node_Transpose_393",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_393"
+        },
+        {
+            "name": "node_linear_36",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_36"
+        },
+        {
+            "name": "node_Transpose_394",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_394"
+        },
+        {
+            "name": "node_linear_37",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_37"
+        },
+        {
+            "name": "node_slice_41",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_41"
+        },
+        {
+            "name": "node_slice_45",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_45"
+        },
+        {
+            "name": "node_matmul_10",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_10"
+        },
+        {
+            "name": "node_matmul_11",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_11"
+        },
+        {
+            "name": "node_Transpose_458",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_458"
+        },
+        {
+            "name": "node_linear_38",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_38"
+        },
+        {
+            "name": "node_add_15",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_15"
+        },
+        {
+            "name": "node_layer_norm_11",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_11"
+        },
+        {
+            "name": "node_Transpose_464",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_464"
+        },
+        {
+            "name": "node_linear_39",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_39"
+        },
+        {
+            "name": "node_Transpose_466",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_466"
+        },
+        {
+            "name": "node_linear_40",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_40"
+        },
+        {
+            "name": "node_Transpose_467",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.5.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_467"
+        },
+        {
+            "name": "node_linear_41",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_41"
+        },
+        {
+            "name": "node_add_17",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_17"
+        },
+        {
+            "name": "node_layer_norm_12",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_12"
+        },
+        {
+            "name": "node_Transpose_468",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_468"
+        },
+        {
+            "name": "node_linear_42",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_42"
+        },
+        {
+            "name": "node_Transpose_469",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_469"
+        },
+        {
+            "name": "node_linear_43",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_43"
+        },
+        {
+            "name": "node_Transpose_470",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_470"
+        },
+        {
+            "name": "node_linear_44",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_44"
+        },
+        {
+            "name": "node_slice_49",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_49"
+        },
+        {
+            "name": "node_slice_53",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_53"
+        },
+        {
+            "name": "node_matmul_12",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_12"
+        },
+        {
+            "name": "node_matmul_13",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_13"
+        },
+        {
+            "name": "node_Transpose_534",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_534"
+        },
+        {
+            "name": "node_linear_45",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_45"
+        },
+        {
+            "name": "node_add_18",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_18"
+        },
+        {
+            "name": "node_layer_norm_13",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_13"
+        },
+        {
+            "name": "node_Transpose_540",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_540"
+        },
+        {
+            "name": "node_linear_46",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_46"
+        },
+        {
+            "name": "node_Transpose_542",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_542"
+        },
+        {
+            "name": "node_linear_47",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_47"
+        },
+        {
+            "name": "node_Transpose_543",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.6.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_543"
+        },
+        {
+            "name": "node_linear_48",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_48"
+        },
+        {
+            "name": "node_add_20",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_20"
+        },
+        {
+            "name": "node_layer_norm_14",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_14"
+        },
+        {
+            "name": "node_Transpose_544",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_544"
+        },
+        {
+            "name": "node_linear_49",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_49"
+        },
+        {
+            "name": "node_Transpose_545",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_545"
+        },
+        {
+            "name": "node_linear_50",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_50"
+        },
+        {
+            "name": "node_Transpose_546",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_546"
+        },
+        {
+            "name": "node_linear_51",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_51"
+        },
+        {
+            "name": "node_slice_57",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_57"
+        },
+        {
+            "name": "node_slice_61",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_61"
+        },
+        {
+            "name": "node_matmul_14",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_14"
+        },
+        {
+            "name": "node_matmul_15",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_15"
+        },
+        {
+            "name": "node_Transpose_610",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_610"
+        },
+        {
+            "name": "node_linear_52",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_52"
+        },
+        {
+            "name": "node_add_21",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_21"
+        },
+        {
+            "name": "node_layer_norm_15",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_15"
+        },
+        {
+            "name": "node_Transpose_616",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_616"
+        },
+        {
+            "name": "node_linear_53",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_53"
+        },
+        {
+            "name": "node_Transpose_618",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_618"
+        },
+        {
+            "name": "node_linear_54",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_54"
+        },
+        {
+            "name": "node_Transpose_619",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.7.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_619"
+        },
+        {
+            "name": "node_linear_55",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_55"
+        },
+        {
+            "name": "node_add_23",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_23"
+        },
+        {
+            "name": "node_layer_norm_16",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_16"
+        },
+        {
+            "name": "node_Transpose_620",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_620"
+        },
+        {
+            "name": "node_linear_56",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_56"
+        },
+        {
+            "name": "node_Transpose_621",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_621"
+        },
+        {
+            "name": "node_linear_57",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_57"
+        },
+        {
+            "name": "node_Transpose_622",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_622"
+        },
+        {
+            "name": "node_linear_58",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_58"
+        },
+        {
+            "name": "node_slice_65",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_65"
+        },
+        {
+            "name": "node_slice_69",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_69"
+        },
+        {
+            "name": "node_matmul_16",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_16"
+        },
+        {
+            "name": "node_matmul_17",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_17"
+        },
+        {
+            "name": "node_Transpose_686",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_686"
+        },
+        {
+            "name": "node_linear_59",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_59"
+        },
+        {
+            "name": "node_add_24",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_24"
+        },
+        {
+            "name": "node_layer_norm_17",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_17"
+        },
+        {
+            "name": "node_Transpose_692",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_692"
+        },
+        {
+            "name": "node_linear_60",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_60"
+        },
+        {
+            "name": "node_Transpose_694",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_694"
+        },
+        {
+            "name": "node_linear_61",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_61"
+        },
+        {
+            "name": "node_Transpose_695",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.8.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_695"
+        },
+        {
+            "name": "node_linear_62",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_62"
+        },
+        {
+            "name": "node_add_26",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_26"
+        },
+        {
+            "name": "node_layer_norm_18",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_18"
+        },
+        {
+            "name": "node_Transpose_696",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_696"
+        },
+        {
+            "name": "node_linear_63",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_63"
+        },
+        {
+            "name": "node_Transpose_697",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_697"
+        },
+        {
+            "name": "node_linear_64",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_64"
+        },
+        {
+            "name": "node_Transpose_698",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_698"
+        },
+        {
+            "name": "node_linear_65",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_65"
+        },
+        {
+            "name": "node_slice_73",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_73"
+        },
+        {
+            "name": "node_slice_77",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_77"
+        },
+        {
+            "name": "node_matmul_18",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_18"
+        },
+        {
+            "name": "node_matmul_19",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_19"
+        },
+        {
+            "name": "node_Transpose_762",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_762"
+        },
+        {
+            "name": "node_linear_66",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_66"
+        },
+        {
+            "name": "node_add_27",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_27"
+        },
+        {
+            "name": "node_layer_norm_19",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_19"
+        },
+        {
+            "name": "node_Transpose_768",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_768"
+        },
+        {
+            "name": "node_linear_67",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_67"
+        },
+        {
+            "name": "node_Transpose_770",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_770"
+        },
+        {
+            "name": "node_linear_68",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_68"
+        },
+        {
+            "name": "node_Transpose_771",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.9.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_771"
+        },
+        {
+            "name": "node_linear_69",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_69"
+        },
+        {
+            "name": "node_add_29",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_29"
+        },
+        {
+            "name": "node_layer_norm_20",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_20"
+        },
+        {
+            "name": "node_Transpose_772",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_772"
+        },
+        {
+            "name": "node_linear_70",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_70"
+        },
+        {
+            "name": "node_Transpose_773",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_773"
+        },
+        {
+            "name": "node_linear_71",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_71"
+        },
+        {
+            "name": "node_Transpose_774",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_774"
+        },
+        {
+            "name": "node_linear_72",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_72"
+        },
+        {
+            "name": "node_slice_81",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_81"
+        },
+        {
+            "name": "node_slice_85",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_85"
+        },
+        {
+            "name": "node_matmul_20",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_20"
+        },
+        {
+            "name": "node_matmul_21",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_21"
+        },
+        {
+            "name": "node_Transpose_838",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_838"
+        },
+        {
+            "name": "node_linear_73",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_73"
+        },
+        {
+            "name": "node_add_30",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_30"
+        },
+        {
+            "name": "node_layer_norm_21",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_21"
+        },
+        {
+            "name": "node_Transpose_844",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_844"
+        },
+        {
+            "name": "node_linear_74",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_74"
+        },
+        {
+            "name": "node_Transpose_846",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_846"
+        },
+        {
+            "name": "node_linear_75",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_75"
+        },
+        {
+            "name": "node_Transpose_847",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.10.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_847"
+        },
+        {
+            "name": "node_linear_76",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_76"
+        },
+        {
+            "name": "node_add_32",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_32"
+        },
+        {
+            "name": "node_layer_norm_22",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_22"
+        },
+        {
+            "name": "node_Transpose_848",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_848"
+        },
+        {
+            "name": "node_linear_77",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_77"
+        },
+        {
+            "name": "node_Transpose_849",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_849"
+        },
+        {
+            "name": "node_linear_78",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_78"
+        },
+        {
+            "name": "node_Transpose_850",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_850"
+        },
+        {
+            "name": "node_linear_79",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_79"
+        },
+        {
+            "name": "node_slice_89",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_89"
+        },
+        {
+            "name": "node_slice_93",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_93"
+        },
+        {
+            "name": "node_matmul_22",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_22"
+        },
+        {
+            "name": "node_matmul_23",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_23"
+        },
+        {
+            "name": "node_Transpose_914",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_914"
+        },
+        {
+            "name": "node_linear_80",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_80"
+        },
+        {
+            "name": "node_add_33",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_33"
+        },
+        {
+            "name": "node_layer_norm_23",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_23"
+        },
+        {
+            "name": "node_Transpose_920",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_920"
+        },
+        {
+            "name": "node_linear_81",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_81"
+        },
+        {
+            "name": "node_Transpose_922",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_922"
+        },
+        {
+            "name": "node_linear_82",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_82"
+        },
+        {
+            "name": "node_Transpose_923",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.11.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_923"
+        },
+        {
+            "name": "node_linear_83",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_83"
+        },
+        {
+            "name": "node_add_35",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_35"
+        },
+        {
+            "name": "node_layer_norm_24",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_24"
+        },
+        {
+            "name": "node_Transpose_924",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_924"
+        },
+        {
+            "name": "node_linear_84",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_84"
+        },
+        {
+            "name": "node_Transpose_925",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_925"
+        },
+        {
+            "name": "node_linear_85",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_85"
+        },
+        {
+            "name": "node_Transpose_926",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_926"
+        },
+        {
+            "name": "node_linear_86",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_86"
+        },
+        {
+            "name": "node_slice_97",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_97"
+        },
+        {
+            "name": "node_slice_101",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_101"
+        },
+        {
+            "name": "node_matmul_24",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_24"
+        },
+        {
+            "name": "node_matmul_25",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_25"
+        },
+        {
+            "name": "node_Transpose_990",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_990"
+        },
+        {
+            "name": "node_linear_87",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_87"
+        },
+        {
+            "name": "node_add_36",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_36"
+        },
+        {
+            "name": "node_layer_norm_25",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_25"
+        },
+        {
+            "name": "node_Transpose_996",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_996"
+        },
+        {
+            "name": "node_linear_88",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_88"
+        },
+        {
+            "name": "node_Transpose_998",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_998"
+        },
+        {
+            "name": "node_linear_89",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_89"
+        },
+        {
+            "name": "node_Transpose_999",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.12.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_999"
+        },
+        {
+            "name": "node_linear_90",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_90"
+        },
+        {
+            "name": "node_add_38",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_38"
+        },
+        {
+            "name": "node_layer_norm_26",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_26"
+        },
+        {
+            "name": "node_Transpose_1000",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1000"
+        },
+        {
+            "name": "node_linear_91",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_91"
+        },
+        {
+            "name": "node_Transpose_1001",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1001"
+        },
+        {
+            "name": "node_linear_92",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_92"
+        },
+        {
+            "name": "node_Transpose_1002",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1002"
+        },
+        {
+            "name": "node_linear_93",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_93"
+        },
+        {
+            "name": "node_slice_105",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_105"
+        },
+        {
+            "name": "node_slice_109",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_109"
+        },
+        {
+            "name": "node_matmul_26",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_26"
+        },
+        {
+            "name": "node_matmul_27",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_27"
+        },
+        {
+            "name": "node_Transpose_1066",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1066"
+        },
+        {
+            "name": "node_linear_94",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_94"
+        },
+        {
+            "name": "node_add_39",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_39"
+        },
+        {
+            "name": "node_layer_norm_27",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_27"
+        },
+        {
+            "name": "node_Transpose_1072",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1072"
+        },
+        {
+            "name": "node_linear_95",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_95"
+        },
+        {
+            "name": "node_Transpose_1074",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1074"
+        },
+        {
+            "name": "node_linear_96",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_96"
+        },
+        {
+            "name": "node_Transpose_1075",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.13.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1075"
+        },
+        {
+            "name": "node_linear_97",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_97"
+        },
+        {
+            "name": "node_add_41",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_41"
+        },
+        {
+            "name": "node_layer_norm_28",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_28"
+        },
+        {
+            "name": "node_Transpose_1076",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1076"
+        },
+        {
+            "name": "node_linear_98",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_98"
+        },
+        {
+            "name": "node_Transpose_1077",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1077"
+        },
+        {
+            "name": "node_linear_99",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_99"
+        },
+        {
+            "name": "node_Transpose_1078",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1078"
+        },
+        {
+            "name": "node_linear_100",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_100"
+        },
+        {
+            "name": "node_slice_113",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_113"
+        },
+        {
+            "name": "node_slice_117",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_117"
+        },
+        {
+            "name": "node_matmul_28",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_28"
+        },
+        {
+            "name": "node_matmul_29",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_29"
+        },
+        {
+            "name": "node_Transpose_1142",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1142"
+        },
+        {
+            "name": "node_linear_101",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_101"
+        },
+        {
+            "name": "node_add_42",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_42"
+        },
+        {
+            "name": "node_layer_norm_29",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_29"
+        },
+        {
+            "name": "node_Transpose_1148",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1148"
+        },
+        {
+            "name": "node_linear_102",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_102"
+        },
+        {
+            "name": "node_Transpose_1150",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1150"
+        },
+        {
+            "name": "node_linear_103",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_103"
+        },
+        {
+            "name": "node_Transpose_1151",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.14.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1151"
+        },
+        {
+            "name": "node_linear_104",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_104"
+        },
+        {
+            "name": "node_add_44",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_44"
+        },
+        {
+            "name": "node_layer_norm_30",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.attention_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_30"
+        },
+        {
+            "name": "node_Transpose_1152",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.attention.wq.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1152"
+        },
+        {
+            "name": "node_linear_105",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_105"
+        },
+        {
+            "name": "node_Transpose_1153",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.attention.wk.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1153"
+        },
+        {
+            "name": "node_linear_106",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_106"
+        },
+        {
+            "name": "node_Transpose_1154",
+            "size": 1048576,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.attention.wv.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1154"
+        },
+        {
+            "name": "node_linear_107",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.7168900096e-05,
+            "latency": 2.0950000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_107"
+        },
+        {
+            "name": "node_slice_121",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.attention.cache_k_0",
+            "op": "Slice",
+            "id": "node_slice_121"
+        },
+        {
+            "name": "node_slice_125",
+            "size": 128,
+            "cache": 2097152,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.attention.cache_v_0",
+            "op": "Slice",
+            "id": "node_slice_125"
+        },
+        {
+            "name": "node_matmul_30",
+            "size": 128,
+            "cache": 0,
+            "energy": 2.190046304e-05,
+            "latency": 2.6870000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_30"
+        },
+        {
+            "name": "node_matmul_31",
+            "size": 128,
+            "cache": 0,
+            "energy": 1.806672576e-05,
+            "latency": 2.2080000000000003e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_matmul_31"
+        },
+        {
+            "name": "node_Transpose_1218",
+            "size": 4194304,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.attention.wo.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1218"
+        },
+        {
+            "name": "node_linear_108",
+            "size": 128,
+            "cache": 0,
+            "energy": 6.8675600384e-05,
+            "latency": 8.383000000000001e-06,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_108"
+        },
+        {
+            "name": "node_add_45",
+            "size": 128,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": null,
+            "op": "Add",
+            "id": "node_add_45"
+        },
+        {
+            "name": "node_layer_norm_31",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.ffn_norm.bias",
+            "op": "LayerNormalization",
+            "id": "node_layer_norm_31"
+        },
+        {
+            "name": "node_Transpose_1224",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.feed_forward.w1.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1224"
+        },
+        {
+            "name": "node_linear_109",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_109"
+        },
+        {
+            "name": "node_Transpose_1226",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.feed_forward.w3.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1226"
+        },
+        {
+            "name": "node_linear_110",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000274702401536,
+            "latency": 3.3535e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_110"
+        },
+        {
+            "name": "node_Transpose_1227",
+            "size": 16777216,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "layers.15.feed_forward.w2.0.weight",
+            "op": "Transpose",
+            "id": "node_Transpose_1227"
+        },
+        {
+            "name": "node_linear_111",
+            "size": 128,
+            "cache": 0,
+            "energy": 0.000400138272768,
+            "latency": 4.9215e-05,
+            "param": null,
+            "op": "MatMul",
+            "id": "node_linear_111"
+        },
+        {
+            "name": "node_mul_17",
+            "size": 2048,
+            "cache": 0,
+            "energy": 1e-11,
+            "latency": 1e-11,
+            "param": "norm.weight",
+            "op": "Mul",
+            "id": "node_mul_17"
+        }
+    ],
+    "edges": [
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm",
+            "destination": "node_linear"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm",
+            "destination": "node_linear_1"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm",
+            "destination": "node_linear_2"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_0",
+            "destination": "node_linear"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear",
+            "destination": "node_matmul"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_1",
+            "destination": "node_linear_1"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_1",
+            "destination": "node_matmul"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_2",
+            "destination": "node_linear_2"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_2",
+            "destination": "node_matmul_1"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_1",
+            "destination": "node_matmul"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_5",
+            "destination": "node_matmul_1"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul",
+            "destination": "node_matmul_1"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_1",
+            "destination": "node_linear_3"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_77",
+            "destination": "node_linear_3"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_3",
+            "destination": "node_add"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add",
+            "destination": "node_layer_norm_1"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add",
+            "destination": "node_add_2"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_1",
+            "destination": "node_linear_4"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_1",
+            "destination": "node_linear_5"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_84",
+            "destination": "node_linear_4"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_4",
+            "destination": "node_linear_6"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_86",
+            "destination": "node_linear_5"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_5",
+            "destination": "node_linear_6"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_87",
+            "destination": "node_linear_6"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_6",
+            "destination": "node_add_2"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_2",
+            "destination": "node_layer_norm_2"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_2",
+            "destination": "node_add_3"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_2",
+            "destination": "node_linear_7"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_2",
+            "destination": "node_linear_8"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_2",
+            "destination": "node_linear_9"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_88",
+            "destination": "node_linear_7"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_7",
+            "destination": "node_matmul_2"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_89",
+            "destination": "node_linear_8"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_8",
+            "destination": "node_matmul_2"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_90",
+            "destination": "node_linear_9"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_9",
+            "destination": "node_matmul_3"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_9",
+            "destination": "node_matmul_2"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_13",
+            "destination": "node_matmul_3"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_2",
+            "destination": "node_matmul_3"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_3",
+            "destination": "node_linear_10"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_154",
+            "destination": "node_linear_10"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_10",
+            "destination": "node_add_3"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_3",
+            "destination": "node_layer_norm_3"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_3",
+            "destination": "node_add_5"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_3",
+            "destination": "node_linear_11"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_3",
+            "destination": "node_linear_12"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_160",
+            "destination": "node_linear_11"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_11",
+            "destination": "node_linear_13"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_162",
+            "destination": "node_linear_12"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_12",
+            "destination": "node_linear_13"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_163",
+            "destination": "node_linear_13"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_13",
+            "destination": "node_add_5"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_5",
+            "destination": "node_layer_norm_4"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_5",
+            "destination": "node_add_6"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_4",
+            "destination": "node_linear_14"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_4",
+            "destination": "node_linear_15"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_4",
+            "destination": "node_linear_16"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_164",
+            "destination": "node_linear_14"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_14",
+            "destination": "node_matmul_4"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_165",
+            "destination": "node_linear_15"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_15",
+            "destination": "node_matmul_4"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_166",
+            "destination": "node_linear_16"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_16",
+            "destination": "node_matmul_5"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_17",
+            "destination": "node_matmul_4"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_21",
+            "destination": "node_matmul_5"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_4",
+            "destination": "node_matmul_5"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_5",
+            "destination": "node_linear_17"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_230",
+            "destination": "node_linear_17"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_17",
+            "destination": "node_add_6"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_6",
+            "destination": "node_layer_norm_5"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_6",
+            "destination": "node_add_8"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_5",
+            "destination": "node_linear_18"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_5",
+            "destination": "node_linear_19"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_236",
+            "destination": "node_linear_18"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_18",
+            "destination": "node_linear_20"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_238",
+            "destination": "node_linear_19"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_19",
+            "destination": "node_linear_20"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_239",
+            "destination": "node_linear_20"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_20",
+            "destination": "node_add_8"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_8",
+            "destination": "node_layer_norm_6"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_8",
+            "destination": "node_add_9"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_6",
+            "destination": "node_linear_21"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_6",
+            "destination": "node_linear_22"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_6",
+            "destination": "node_linear_23"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_240",
+            "destination": "node_linear_21"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_21",
+            "destination": "node_matmul_6"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_241",
+            "destination": "node_linear_22"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_22",
+            "destination": "node_matmul_6"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_242",
+            "destination": "node_linear_23"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_23",
+            "destination": "node_matmul_7"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_25",
+            "destination": "node_matmul_6"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_29",
+            "destination": "node_matmul_7"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_6",
+            "destination": "node_matmul_7"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_7",
+            "destination": "node_linear_24"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_306",
+            "destination": "node_linear_24"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_24",
+            "destination": "node_add_9"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_9",
+            "destination": "node_layer_norm_7"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_9",
+            "destination": "node_add_11"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_7",
+            "destination": "node_linear_25"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_7",
+            "destination": "node_linear_26"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_312",
+            "destination": "node_linear_25"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_25",
+            "destination": "node_linear_27"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_314",
+            "destination": "node_linear_26"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_26",
+            "destination": "node_linear_27"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_315",
+            "destination": "node_linear_27"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_27",
+            "destination": "node_add_11"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_11",
+            "destination": "node_layer_norm_8"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_11",
+            "destination": "node_add_12"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_8",
+            "destination": "node_linear_28"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_8",
+            "destination": "node_linear_29"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_8",
+            "destination": "node_linear_30"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_316",
+            "destination": "node_linear_28"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_28",
+            "destination": "node_matmul_8"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_317",
+            "destination": "node_linear_29"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_29",
+            "destination": "node_matmul_8"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_318",
+            "destination": "node_linear_30"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_30",
+            "destination": "node_matmul_9"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_33",
+            "destination": "node_matmul_8"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_37",
+            "destination": "node_matmul_9"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_8",
+            "destination": "node_matmul_9"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_9",
+            "destination": "node_linear_31"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_382",
+            "destination": "node_linear_31"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_31",
+            "destination": "node_add_12"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_12",
+            "destination": "node_layer_norm_9"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_12",
+            "destination": "node_add_14"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_9",
+            "destination": "node_linear_32"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_9",
+            "destination": "node_linear_33"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_388",
+            "destination": "node_linear_32"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_32",
+            "destination": "node_linear_34"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_390",
+            "destination": "node_linear_33"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_33",
+            "destination": "node_linear_34"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_391",
+            "destination": "node_linear_34"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_34",
+            "destination": "node_add_14"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_14",
+            "destination": "node_layer_norm_10"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_14",
+            "destination": "node_add_15"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_10",
+            "destination": "node_linear_35"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_10",
+            "destination": "node_linear_36"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_10",
+            "destination": "node_linear_37"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_392",
+            "destination": "node_linear_35"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_35",
+            "destination": "node_matmul_10"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_393",
+            "destination": "node_linear_36"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_36",
+            "destination": "node_matmul_10"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_394",
+            "destination": "node_linear_37"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_37",
+            "destination": "node_matmul_11"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_41",
+            "destination": "node_matmul_10"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_45",
+            "destination": "node_matmul_11"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_10",
+            "destination": "node_matmul_11"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_11",
+            "destination": "node_linear_38"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_458",
+            "destination": "node_linear_38"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_38",
+            "destination": "node_add_15"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_15",
+            "destination": "node_layer_norm_11"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_15",
+            "destination": "node_add_17"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_11",
+            "destination": "node_linear_39"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_11",
+            "destination": "node_linear_40"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_464",
+            "destination": "node_linear_39"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_39",
+            "destination": "node_linear_41"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_466",
+            "destination": "node_linear_40"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_40",
+            "destination": "node_linear_41"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_467",
+            "destination": "node_linear_41"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_41",
+            "destination": "node_add_17"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_17",
+            "destination": "node_layer_norm_12"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_17",
+            "destination": "node_add_18"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_12",
+            "destination": "node_linear_42"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_12",
+            "destination": "node_linear_43"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_12",
+            "destination": "node_linear_44"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_468",
+            "destination": "node_linear_42"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_42",
+            "destination": "node_matmul_12"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_469",
+            "destination": "node_linear_43"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_43",
+            "destination": "node_matmul_12"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_470",
+            "destination": "node_linear_44"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_44",
+            "destination": "node_matmul_13"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_49",
+            "destination": "node_matmul_12"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_53",
+            "destination": "node_matmul_13"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_12",
+            "destination": "node_matmul_13"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_13",
+            "destination": "node_linear_45"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_534",
+            "destination": "node_linear_45"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_45",
+            "destination": "node_add_18"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_18",
+            "destination": "node_layer_norm_13"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_18",
+            "destination": "node_add_20"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_13",
+            "destination": "node_linear_46"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_13",
+            "destination": "node_linear_47"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_540",
+            "destination": "node_linear_46"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_46",
+            "destination": "node_linear_48"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_542",
+            "destination": "node_linear_47"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_47",
+            "destination": "node_linear_48"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_543",
+            "destination": "node_linear_48"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_48",
+            "destination": "node_add_20"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_20",
+            "destination": "node_layer_norm_14"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_20",
+            "destination": "node_add_21"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_14",
+            "destination": "node_linear_49"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_14",
+            "destination": "node_linear_50"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_14",
+            "destination": "node_linear_51"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_544",
+            "destination": "node_linear_49"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_49",
+            "destination": "node_matmul_14"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_545",
+            "destination": "node_linear_50"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_50",
+            "destination": "node_matmul_14"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_546",
+            "destination": "node_linear_51"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_51",
+            "destination": "node_matmul_15"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_57",
+            "destination": "node_matmul_14"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_61",
+            "destination": "node_matmul_15"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_14",
+            "destination": "node_matmul_15"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_15",
+            "destination": "node_linear_52"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_610",
+            "destination": "node_linear_52"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_52",
+            "destination": "node_add_21"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_21",
+            "destination": "node_layer_norm_15"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_21",
+            "destination": "node_add_23"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_15",
+            "destination": "node_linear_53"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_15",
+            "destination": "node_linear_54"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_616",
+            "destination": "node_linear_53"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_53",
+            "destination": "node_linear_55"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_618",
+            "destination": "node_linear_54"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_54",
+            "destination": "node_linear_55"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_619",
+            "destination": "node_linear_55"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_55",
+            "destination": "node_add_23"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_23",
+            "destination": "node_layer_norm_16"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_23",
+            "destination": "node_add_24"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_16",
+            "destination": "node_linear_56"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_16",
+            "destination": "node_linear_57"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_16",
+            "destination": "node_linear_58"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_620",
+            "destination": "node_linear_56"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_56",
+            "destination": "node_matmul_16"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_621",
+            "destination": "node_linear_57"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_57",
+            "destination": "node_matmul_16"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_622",
+            "destination": "node_linear_58"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_58",
+            "destination": "node_matmul_17"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_65",
+            "destination": "node_matmul_16"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_69",
+            "destination": "node_matmul_17"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_16",
+            "destination": "node_matmul_17"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_17",
+            "destination": "node_linear_59"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_686",
+            "destination": "node_linear_59"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_59",
+            "destination": "node_add_24"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_24",
+            "destination": "node_layer_norm_17"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_24",
+            "destination": "node_add_26"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_17",
+            "destination": "node_linear_60"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_17",
+            "destination": "node_linear_61"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_692",
+            "destination": "node_linear_60"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_60",
+            "destination": "node_linear_62"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_694",
+            "destination": "node_linear_61"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_61",
+            "destination": "node_linear_62"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_695",
+            "destination": "node_linear_62"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_62",
+            "destination": "node_add_26"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_26",
+            "destination": "node_layer_norm_18"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_26",
+            "destination": "node_add_27"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_18",
+            "destination": "node_linear_63"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_18",
+            "destination": "node_linear_64"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_18",
+            "destination": "node_linear_65"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_696",
+            "destination": "node_linear_63"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_63",
+            "destination": "node_matmul_18"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_697",
+            "destination": "node_linear_64"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_64",
+            "destination": "node_matmul_18"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_698",
+            "destination": "node_linear_65"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_65",
+            "destination": "node_matmul_19"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_73",
+            "destination": "node_matmul_18"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_77",
+            "destination": "node_matmul_19"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_18",
+            "destination": "node_matmul_19"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_19",
+            "destination": "node_linear_66"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_762",
+            "destination": "node_linear_66"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_66",
+            "destination": "node_add_27"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_27",
+            "destination": "node_layer_norm_19"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_27",
+            "destination": "node_add_29"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_19",
+            "destination": "node_linear_67"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_19",
+            "destination": "node_linear_68"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_768",
+            "destination": "node_linear_67"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_67",
+            "destination": "node_linear_69"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_770",
+            "destination": "node_linear_68"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_68",
+            "destination": "node_linear_69"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_771",
+            "destination": "node_linear_69"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_69",
+            "destination": "node_add_29"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_29",
+            "destination": "node_layer_norm_20"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_29",
+            "destination": "node_add_30"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_20",
+            "destination": "node_linear_70"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_20",
+            "destination": "node_linear_71"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_20",
+            "destination": "node_linear_72"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_772",
+            "destination": "node_linear_70"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_70",
+            "destination": "node_matmul_20"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_773",
+            "destination": "node_linear_71"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_71",
+            "destination": "node_matmul_20"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_774",
+            "destination": "node_linear_72"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_72",
+            "destination": "node_matmul_21"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_81",
+            "destination": "node_matmul_20"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_85",
+            "destination": "node_matmul_21"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_20",
+            "destination": "node_matmul_21"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_21",
+            "destination": "node_linear_73"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_838",
+            "destination": "node_linear_73"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_73",
+            "destination": "node_add_30"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_30",
+            "destination": "node_layer_norm_21"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_30",
+            "destination": "node_add_32"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_21",
+            "destination": "node_linear_74"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_21",
+            "destination": "node_linear_75"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_844",
+            "destination": "node_linear_74"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_74",
+            "destination": "node_linear_76"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_846",
+            "destination": "node_linear_75"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_75",
+            "destination": "node_linear_76"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_847",
+            "destination": "node_linear_76"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_76",
+            "destination": "node_add_32"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_32",
+            "destination": "node_layer_norm_22"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_32",
+            "destination": "node_add_33"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_22",
+            "destination": "node_linear_77"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_22",
+            "destination": "node_linear_78"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_22",
+            "destination": "node_linear_79"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_848",
+            "destination": "node_linear_77"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_77",
+            "destination": "node_matmul_22"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_849",
+            "destination": "node_linear_78"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_78",
+            "destination": "node_matmul_22"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_850",
+            "destination": "node_linear_79"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_79",
+            "destination": "node_matmul_23"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_89",
+            "destination": "node_matmul_22"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_93",
+            "destination": "node_matmul_23"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_22",
+            "destination": "node_matmul_23"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_23",
+            "destination": "node_linear_80"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_914",
+            "destination": "node_linear_80"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_80",
+            "destination": "node_add_33"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_33",
+            "destination": "node_layer_norm_23"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_33",
+            "destination": "node_add_35"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_23",
+            "destination": "node_linear_81"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_23",
+            "destination": "node_linear_82"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_920",
+            "destination": "node_linear_81"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_81",
+            "destination": "node_linear_83"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_922",
+            "destination": "node_linear_82"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_82",
+            "destination": "node_linear_83"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_923",
+            "destination": "node_linear_83"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_83",
+            "destination": "node_add_35"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_35",
+            "destination": "node_layer_norm_24"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_35",
+            "destination": "node_add_36"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_24",
+            "destination": "node_linear_84"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_24",
+            "destination": "node_linear_85"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_24",
+            "destination": "node_linear_86"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_924",
+            "destination": "node_linear_84"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_84",
+            "destination": "node_matmul_24"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_925",
+            "destination": "node_linear_85"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_85",
+            "destination": "node_matmul_24"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_926",
+            "destination": "node_linear_86"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_86",
+            "destination": "node_matmul_25"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_97",
+            "destination": "node_matmul_24"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_101",
+            "destination": "node_matmul_25"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_24",
+            "destination": "node_matmul_25"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_25",
+            "destination": "node_linear_87"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_990",
+            "destination": "node_linear_87"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_87",
+            "destination": "node_add_36"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_36",
+            "destination": "node_layer_norm_25"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_36",
+            "destination": "node_add_38"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_25",
+            "destination": "node_linear_88"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_25",
+            "destination": "node_linear_89"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_996",
+            "destination": "node_linear_88"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_88",
+            "destination": "node_linear_90"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_998",
+            "destination": "node_linear_89"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_89",
+            "destination": "node_linear_90"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_999",
+            "destination": "node_linear_90"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_90",
+            "destination": "node_add_38"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_38",
+            "destination": "node_layer_norm_26"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_38",
+            "destination": "node_add_39"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_26",
+            "destination": "node_linear_91"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_26",
+            "destination": "node_linear_92"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_26",
+            "destination": "node_linear_93"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_1000",
+            "destination": "node_linear_91"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_91",
+            "destination": "node_matmul_26"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_1001",
+            "destination": "node_linear_92"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_92",
+            "destination": "node_matmul_26"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_1002",
+            "destination": "node_linear_93"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_93",
+            "destination": "node_matmul_27"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_105",
+            "destination": "node_matmul_26"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_109",
+            "destination": "node_matmul_27"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_26",
+            "destination": "node_matmul_27"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_27",
+            "destination": "node_linear_94"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_1066",
+            "destination": "node_linear_94"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_94",
+            "destination": "node_add_39"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_39",
+            "destination": "node_layer_norm_27"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_39",
+            "destination": "node_add_41"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_27",
+            "destination": "node_linear_95"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_27",
+            "destination": "node_linear_96"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_1072",
+            "destination": "node_linear_95"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_95",
+            "destination": "node_linear_97"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_1074",
+            "destination": "node_linear_96"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_96",
+            "destination": "node_linear_97"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_1075",
+            "destination": "node_linear_97"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_97",
+            "destination": "node_add_41"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_41",
+            "destination": "node_layer_norm_28"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_41",
+            "destination": "node_add_42"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_28",
+            "destination": "node_linear_98"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_28",
+            "destination": "node_linear_99"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_28",
+            "destination": "node_linear_100"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_1076",
+            "destination": "node_linear_98"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_98",
+            "destination": "node_matmul_28"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_1077",
+            "destination": "node_linear_99"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_99",
+            "destination": "node_matmul_28"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_1078",
+            "destination": "node_linear_100"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_100",
+            "destination": "node_matmul_29"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_113",
+            "destination": "node_matmul_28"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_117",
+            "destination": "node_matmul_29"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_28",
+            "destination": "node_matmul_29"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_29",
+            "destination": "node_linear_101"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_1142",
+            "destination": "node_linear_101"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_101",
+            "destination": "node_add_42"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_42",
+            "destination": "node_layer_norm_29"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_42",
+            "destination": "node_add_44"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_29",
+            "destination": "node_linear_102"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_29",
+            "destination": "node_linear_103"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_1148",
+            "destination": "node_linear_102"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_102",
+            "destination": "node_linear_104"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_1150",
+            "destination": "node_linear_103"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_103",
+            "destination": "node_linear_104"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_1151",
+            "destination": "node_linear_104"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_104",
+            "destination": "node_add_44"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_44",
+            "destination": "node_layer_norm_30"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_44",
+            "destination": "node_add_45"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_30",
+            "destination": "node_linear_105"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_30",
+            "destination": "node_linear_106"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_30",
+            "destination": "node_linear_107"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_1152",
+            "destination": "node_linear_105"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_105",
+            "destination": "node_matmul_30"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_1153",
+            "destination": "node_linear_106"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_106",
+            "destination": "node_matmul_30"
+        },
+        {
+            "size": 1048576,
+            "energy": 8.388608e-06,
+            "latency": 5.24288e-05,
+            "source": "node_Transpose_1154",
+            "destination": "node_linear_107"
+        },
+        {
+            "size": 512,
+            "energy": 4.096e-09,
+            "latency": 2.56e-08,
+            "source": "node_linear_107",
+            "destination": "node_matmul_31"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_121",
+            "destination": "node_matmul_30"
+        },
+        {
+            "size": 2097152,
+            "energy": 1.6777216e-05,
+            "latency": 0.0001048576,
+            "source": "node_slice_125",
+            "destination": "node_matmul_31"
+        },
+        {
+            "size": 16416,
+            "energy": 1.31328e-07,
+            "latency": 8.208e-07,
+            "source": "node_matmul_30",
+            "destination": "node_matmul_31"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_matmul_31",
+            "destination": "node_linear_108"
+        },
+        {
+            "size": 4194304,
+            "energy": 3.3554432e-05,
+            "latency": 0.0002097152,
+            "source": "node_Transpose_1218",
+            "destination": "node_linear_108"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_108",
+            "destination": "node_add_45"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_45",
+            "destination": "node_layer_norm_31"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_add_45",
+            "destination": "node_mul_17"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_31",
+            "destination": "node_linear_109"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_layer_norm_31",
+            "destination": "node_linear_110"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_1224",
+            "destination": "node_linear_109"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_109",
+            "destination": "node_linear_111"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_1226",
+            "destination": "node_linear_110"
+        },
+        {
+            "size": 8192,
+            "energy": 6.5536e-08,
+            "latency": 4.096e-07,
+            "source": "node_linear_110",
+            "destination": "node_linear_111"
+        },
+        {
+            "size": 16777216,
+            "energy": 0.000134217728,
+            "latency": 0.0008388608,
+            "source": "node_Transpose_1227",
+            "destination": "node_linear_111"
+        },
+        {
+            "size": 2048,
+            "energy": 1.6384e-08,
+            "latency": 1.024e-07,
+            "source": "node_linear_111",
+            "destination": "node_mul_17"
+        }
+    ]
+}
