@@ -1,0 +1,294 @@
+{
+  "nodes": [
+    {
+      "node_id": "compute_0",
+      "kind": "compute",
+      "layer_id": 0,
+      "layer_name": "conv",
+      "operator_type": "Conv",
+      "inputs": [
+        "tensor_input",
+        "conv_W"
+      ],
+      "outputs": [
+        "conv_O"
+      ],
+      "memory_accesses": [
+        {
+          "tensor": "tensor_input",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 0,
+          "reads": 72,
+          "writes": 3,
+          "total_movement": 75,
+          "reads_up": 0,
+          "writes_down": 3,
+          "reads_down": 72,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM",
+          "assignment_reason": "intermediate activation with read-dominated traffic"
+        },
+        {
+          "tensor": "tensor_input",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 1,
+          "reads": 122,
+          "writes": 0,
+          "total_movement": 122,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 122,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM",
+          "assignment_reason": "intermediate activation with read-dominated traffic"
+        },
+        {
+          "tensor": "conv_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 0,
+          "reads": 61440,
+          "writes": 55296,
+          "total_movement": 116736,
+          "reads_up": 6144,
+          "writes_down": 0,
+          "reads_down": 55296,
+          "writes_up": 55296,
+          "suggested_memory": "StRAM",
+          "assignment_reason": "intermediate activation with high write ratio"
+        },
+        {
+          "tensor": "conv_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 1,
+          "reads": 8,
+          "writes": 8,
+          "total_movement": 16,
+          "reads_up": 8,
+          "writes_down": 0,
+          "reads_down": 0,
+          "writes_up": 8,
+          "suggested_memory": "StRAM",
+          "assignment_reason": "intermediate activation with high write ratio"
+        },
+        {
+          "tensor": "conv_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 2,
+          "reads": 0,
+          "writes": 256,
+          "total_movement": 256,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 0,
+          "writes_up": 256,
+          "suggested_memory": "StRAM",
+          "assignment_reason": "intermediate activation with high write ratio"
+        },
+        {
+          "tensor": "conv_W",
+          "tensor_category": "weights",
+          "operand": "W",
+          "memory_level": 0,
+          "reads": 55296,
+          "writes": 216,
+          "total_movement": 55512,
+          "reads_up": 0,
+          "writes_down": 216,
+          "reads_down": 55296,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM",
+          "assignment_reason": "weights are persistent and read-dominated"
+        },
+        {
+          "tensor": "conv_W",
+          "tensor_category": "weights",
+          "operand": "W",
+          "memory_level": 1,
+          "reads": 27,
+          "writes": 0,
+          "total_movement": 27,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 27,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM",
+          "assignment_reason": "weights are persistent and read-dominated"
+        }
+      ]
+    },
+    {
+      "node_id": "compute_1",
+      "kind": "compute",
+      "layer_id": 1,
+      "layer_name": "fc",
+      "operator_type": "Gemm",
+      "inputs": [
+        "conv_O",
+        "fc_W"
+      ],
+      "outputs": [
+        "fc_O"
+      ],
+      "memory_accesses": [
+        {
+          "tensor": "conv_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 0,
+          "reads": 64,
+          "writes": 8,
+          "total_movement": 72,
+          "reads_up": 0,
+          "writes_down": 8,
+          "reads_down": 64,
+          "writes_up": 0,
+          "suggested_memory": "StRAM",
+          "assignment_reason": "intermediate activation with high write ratio"
+        },
+        {
+          "tensor": "conv_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 1,
+          "reads": 256,
+          "writes": 0,
+          "total_movement": 256,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 256,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM",
+          "assignment_reason": "intermediate activation with read-dominated traffic"
+        },
+        {
+          "tensor": "fc_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 0,
+          "reads": 40960,
+          "writes": 40960,
+          "total_movement": 81920,
+          "reads_up": 20480,
+          "writes_down": 20480,
+          "reads_down": 20480,
+          "writes_up": 20480,
+          "suggested_memory": "StRAM",
+          "assignment_reason": "intermediate activation with high write ratio"
+        },
+        {
+          "tensor": "fc_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 1,
+          "reads": 640,
+          "writes": 640,
+          "total_movement": 1280,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 640,
+          "writes_up": 640,
+          "suggested_memory": "StRAM",
+          "assignment_reason": "intermediate activation with high write ratio"
+        },
+        {
+          "tensor": "fc_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 2,
+          "reads": 0,
+          "writes": 2,
+          "total_movement": 2,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 0,
+          "writes_up": 2,
+          "suggested_memory": "StRAM",
+          "assignment_reason": "intermediate activation with high write ratio"
+        },
+        {
+          "tensor": "fc_W",
+          "tensor_category": "weights",
+          "operand": "W",
+          "memory_level": 0,
+          "reads": 20480,
+          "writes": 20480,
+          "total_movement": 40960,
+          "reads_up": 0,
+          "writes_down": 20480,
+          "reads_down": 20480,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM",
+          "assignment_reason": "weights are persistent and read-dominated"
+        },
+        {
+          "tensor": "fc_W",
+          "tensor_category": "weights",
+          "operand": "W",
+          "memory_level": 1,
+          "reads": 4096,
+          "writes": 0,
+          "total_movement": 4096,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 4096,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM",
+          "assignment_reason": "weights are persistent and read-dominated"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "tensor": "conv_O",
+      "producer": "compute_0",
+      "consumers": [
+        "compute_1"
+      ],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        8,
+        16,
+        16
+      ],
+      "size_elements": 2048,
+      "fanout": 1,
+      "lifetime": 1,
+      "reuse": 320,
+      "class_name": "high_reuse_activation",
+      "semantic_type": "activation",
+      "category": "intermediate_activation"
+    },
+    {
+      "tensor": "fc_O",
+      "producer": "compute_1",
+      "consumers": [],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        10
+      ],
+      "size_elements": 10,
+      "fanout": 0,
+      "lifetime": 0,
+      "reuse": 0,
+      "class_name": "ephemeral_activation",
+      "semantic_type": "activation",
+      "category": "intermediate_activation"
+    }
+  ],
+  "memory_assignment_histogram": {
+    "LtRAM": 7,
+    "StRAM": 7
+  },
+  "tensor_category_histogram": {
+    "intermediate_activation": 10,
+    "weights": 4
+  }
+}

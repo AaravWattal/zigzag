@@ -42,6 +42,9 @@ TOY_WORKLOADS = [
     },
 ]
 
+MEMORY_TECHS = ("LtRAM", "StRAM")
+TENSOR_CATEGORIES = ("weights", "intermediate_activation", "kv_cache")
+
 
 def run_command(args):
     print("+", " ".join(args), flush=True)
@@ -80,11 +83,23 @@ def load_json(path):
         return json.load(f)
 
 
-def summarize_workload(config, run_summary, classified_features):
+def normalized_histogram(counter, keys):
+    return {key: counter.get(key, 0) for key in keys}
+
+
+def iter_accesses(graph):
+    for node in graph.get("nodes", []):
+        yield from node.get("memory_accesses", [])
+
+
+def summarize_workload(config, run_summary, classified_features, assigned_graph):
     histogram = Counter(feature["class_name"] for feature in classified_features)
     lifetimes = [feature.get("lifetime", 0) or 0 for feature in classified_features]
     fanouts = [feature.get("fanout", 0) or 0 for feature in classified_features]
     reuses = [feature.get("reuse", 0) or 0 for feature in classified_features]
+    accesses = list(iter_accesses(assigned_graph))
+    memory_assignment_histogram = Counter(access["suggested_memory"] for access in accesses)
+    tensor_category_histogram = Counter(access["tensor_category"] for access in accesses)
 
     yaml_path = f"workloads/{config['prefix']}.yaml"
     with open(REPO_ROOT / yaml_path, "r", encoding="utf-8") as f:
@@ -102,11 +117,19 @@ def summarize_workload(config, run_summary, classified_features):
         "max_fanout": max(fanouts, default=0),
         "max_reuse": max(reuses, default=0),
         "class_histogram": dict(sorted(histogram.items())),
+        "num_compute_nodes": len(assigned_graph.get("nodes", [])),
+        "num_memory_access_records": len(accesses),
+        "memory_assignment_histogram": normalized_histogram(memory_assignment_histogram, MEMORY_TECHS),
+        "tensor_category_histogram": normalized_histogram(tensor_category_histogram, TENSOR_CATEGORIES),
         "yaml": yaml_path,
         "cmes_pickle": run_summary["pickle_filename"],
         "tensor_features": f"workloads/{config['prefix']}_tensor_features.json",
         "tensor_features_with_reuse": f"workloads/{config['prefix']}_tensor_features_with_reuse.json",
         "tensor_features_classified": f"workloads/{config['prefix']}_tensor_features_classified.json",
+        "memory_level_accesses": f"workloads/{config['prefix']}_memory_level_accesses.json",
+        "expanded_memory_graph": f"workloads/{config['prefix']}_expanded_memory_graph.json",
+        "expanded_memory_graph_assigned": f"workloads/{config['prefix']}_expanded_memory_graph_assigned.json",
+        "miqp_frontend_input": f"workloads/{config['prefix']}_miqp_frontend_input.json",
         "dump_folder": run_summary["dump_folder"],
     }
 
@@ -117,6 +140,10 @@ def run_workload(config):
     features_path = f"workloads/{prefix}_tensor_features.json"
     reuse_path = f"workloads/{prefix}_tensor_features_with_reuse.json"
     classified_path = f"workloads/{prefix}_tensor_features_classified.json"
+    memory_levels_path = f"workloads/{prefix}_memory_level_accesses.json"
+    expanded_graph_path = f"workloads/{prefix}_expanded_memory_graph.json"
+    assigned_graph_path = f"workloads/{prefix}_expanded_memory_graph_assigned.json"
+    miqp_path = f"workloads/{prefix}_miqp_frontend_input.json"
 
     run_command(
         [
@@ -165,7 +192,52 @@ def run_workload(config):
         ]
     )
 
-    return summarize_workload(config, run_summary, load_json(REPO_ROOT / classified_path))
+    run_command(
+        [
+            sys.executable,
+            "scripts/extract_cme_memory_levels.py",
+            run_summary["pickle_filename"],
+            reuse_path,
+            memory_levels_path,
+        ]
+    )
+
+    run_command(
+        [
+            sys.executable,
+            "scripts/build_expanded_memory_graph.py",
+            classified_path,
+            memory_levels_path,
+            expanded_graph_path,
+        ]
+    )
+
+    run_command(
+        [
+            sys.executable,
+            "scripts/assign_ltram_stram.py",
+            expanded_graph_path,
+            assigned_graph_path,
+        ]
+    )
+
+    run_command(
+        [
+            sys.executable,
+            "scripts/build_miqp_frontend_input.py",
+            assigned_graph_path,
+            miqp_path,
+            "--workload-name",
+            prefix,
+        ]
+    )
+
+    return summarize_workload(
+        config,
+        run_summary,
+        load_json(REPO_ROOT / classified_path),
+        load_json(REPO_ROOT / assigned_graph_path),
+    )
 
 
 def main():
@@ -185,6 +257,24 @@ def main():
                     for _ in range(count)
                 ).items()
             )
+        ),
+        "memory_assignment_histogram": normalized_histogram(
+            Counter(
+                memory
+                for summary in summaries
+                for memory, count in summary["memory_assignment_histogram"].items()
+                for _ in range(count)
+            ),
+            MEMORY_TECHS,
+        ),
+        "tensor_category_histogram": normalized_histogram(
+            Counter(
+                category
+                for summary in summaries
+                for category, count in summary["tensor_category_histogram"].items()
+                for _ in range(count)
+            ),
+            TENSOR_CATEGORIES,
         ),
     }
 

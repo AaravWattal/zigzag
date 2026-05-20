@@ -1,0 +1,107 @@
+{
+  "nodes": [
+    {
+      "node_id": "compute_0",
+      "kind": "compute",
+      "layer_id": 0,
+      "layer_name": "fc",
+      "operator_type": "Gemm",
+      "inputs": [
+        "tensor_input",
+        "fc_W"
+      ],
+      "outputs": [
+        "fc_O"
+      ],
+      "memory_accesses": [
+        {
+          "tensor": "tensor_input",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 0,
+          "reads": 1,
+          "writes": 0,
+          "total_movement": 1,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 1,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM",
+          "assignment_reason": "intermediate activation with read-dominated traffic"
+        },
+        {
+          "tensor": "fc_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 0,
+          "reads": 4096,
+          "writes": 4096,
+          "total_movement": 8192,
+          "reads_up": 2048,
+          "writes_down": 2048,
+          "reads_down": 2048,
+          "writes_up": 2048,
+          "suggested_memory": "StRAM",
+          "assignment_reason": "intermediate activation with high write ratio"
+        },
+        {
+          "tensor": "fc_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 1,
+          "reads": 8,
+          "writes": 8,
+          "total_movement": 16,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 8,
+          "writes_up": 8,
+          "suggested_memory": "StRAM",
+          "assignment_reason": "intermediate activation with high write ratio"
+        },
+        {
+          "tensor": "fc_W",
+          "tensor_category": "weights",
+          "operand": "W",
+          "memory_level": 0,
+          "reads": 32,
+          "writes": 0,
+          "total_movement": 32,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 32,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM",
+          "assignment_reason": "weights are persistent and read-dominated"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "tensor": "fc_O",
+      "producer": "compute_0",
+      "consumers": [],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        32
+      ],
+      "size_elements": 32,
+      "fanout": 0,
+      "lifetime": 0,
+      "reuse": 0,
+      "class_name": "ephemeral_activation",
+      "semantic_type": "activation",
+      "category": "intermediate_activation"
+    }
+  ],
+  "memory_assignment_histogram": {
+    "LtRAM": 2,
+    "StRAM": 2
+  },
+  "tensor_category_histogram": {
+    "intermediate_activation": 3,
+    "weights": 1
+  }
+}

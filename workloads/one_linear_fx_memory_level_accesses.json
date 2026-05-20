@@ -1,0 +1,57 @@
+{
+  "layers": [
+    {
+      "layer_id": 0,
+      "layer_name": "fc",
+      "operator_type": "Gemm",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 2048,
+            "writes_down": 2048,
+            "reads_down": 2048,
+            "writes_up": 2048,
+            "total_reads": 4096,
+            "total_writes": 4096,
+            "total_movement": 8192
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 8,
+            "writes_up": 8,
+            "total_reads": 8,
+            "total_writes": 8,
+            "total_movement": 16
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1,
+            "writes_up": 0,
+            "total_reads": 1,
+            "total_writes": 0,
+            "total_movement": 1
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 32,
+            "writes_up": 0,
+            "total_reads": 32,
+            "total_writes": 0,
+            "total_movement": 32
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "workload_name": "tiny_cnn_linear_auto_fx",
+  "compute_nodes": [
+    {
+      "id": 0,
+      "name": "conv",
+      "operator_type": "Conv"
+    },
+    {
+      "id": 1,
+      "name": "fc",
+      "operator_type": "Gemm"
+    }
+  ],
+  "tensor_edges": [
+    {
+      "tensor": "conv_O",
+      "producer": 0,
+      "consumers": [
+        1
+      ],
+      "size_elements": 2048,
+      "lifetime": 1,
+      "reuse": 320,
+      "fanout": 1,
+      "category": "intermediate_activation"
+    },
+    {
+      "tensor": "fc_O",
+      "producer": 1,
+      "consumers": [],
+      "size_elements": 10,
+      "lifetime": 0,
+      "reuse": 0,
+      "fanout": 0,
+      "category": "intermediate_activation"
+    }
+  ],
+  "memory_accesses": [
+    {
+      "layer_id": 0,
+      "operand": "I",
+      "tensor": "tensor_input",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 72,
+      "writes": 3,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "I",
+      "tensor": "tensor_input",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 1,
+      "reads": 122,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "O",
+      "tensor": "conv_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 61440,
+      "writes": 55296,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "O",
+      "tensor": "conv_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 1,
+      "reads": 8,
+      "writes": 8,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "O",
+      "tensor": "conv_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 2,
+      "reads": 0,
+      "writes": 256,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "W",
+      "tensor": "conv_W",
+      "tensor_category": "weights",
+      "memory_level": 0,
+      "reads": 55296,
+      "writes": 216,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "W",
+      "tensor": "conv_W",
+      "tensor_category": "weights",
+      "memory_level": 1,
+      "reads": 27,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "I",
+      "tensor": "conv_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 64,
+      "writes": 8,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "I",
+      "tensor": "conv_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 1,
+      "reads": 256,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "O",
+      "tensor": "fc_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 40960,
+      "writes": 40960,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "O",
+      "tensor": "fc_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 1,
+      "reads": 640,
+      "writes": 640,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "O",
+      "tensor": "fc_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 2,
+      "reads": 0,
+      "writes": 2,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "W",
+      "tensor": "fc_W",
+      "tensor_category": "weights",
+      "memory_level": 0,
+      "reads": 20480,
+      "writes": 20480,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 1,
+      "operand": "W",
+      "tensor": "fc_W",
+      "tensor_category": "weights",
+      "memory_level": 1,
+      "reads": 4096,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    }
+  ]
+}

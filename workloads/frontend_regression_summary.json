@@ -15,12 +15,27 @@
         "ephemeral_activation": 1,
         "high_reuse_activation": 1
       },
+      "num_compute_nodes": 2,
+      "num_memory_access_records": 14,
+      "memory_assignment_histogram": {
+        "LtRAM": 7,
+        "StRAM": 7
+      },
+      "tensor_category_histogram": {
+        "weights": 4,
+        "intermediate_activation": 10,
+        "kv_cache": 0
+      },
       "yaml": "workloads/two_conv_auto_fx.yaml",
-      "cmes_pickle": "outputs/two_conv_auto_fx_20260519_222900/cmes.pickle",
+      "cmes_pickle": "outputs/two_conv_auto_fx_20260519_224518/cmes.pickle",
       "tensor_features": "workloads/two_conv_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/two_conv_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/two_conv_auto_fx_tensor_features_classified.json",
-      "dump_folder": "outputs/two_conv_auto_fx_20260519_222900"
+      "memory_level_accesses": "workloads/two_conv_auto_fx_memory_level_accesses.json",
+      "expanded_memory_graph": "workloads/two_conv_auto_fx_expanded_memory_graph.json",
+      "expanded_memory_graph_assigned": "workloads/two_conv_auto_fx_expanded_memory_graph_assigned.json",
+      "miqp_frontend_input": "workloads/two_conv_auto_fx_miqp_frontend_input.json",
+      "dump_folder": "outputs/two_conv_auto_fx_20260519_224518"
     },
     {
       "model": "tiny_residual",
@@ -37,12 +52,27 @@
         "ephemeral_activation": 1,
         "high_reuse_activation": 2
       },
+      "num_compute_nodes": 3,
+      "num_memory_access_records": 21,
+      "memory_assignment_histogram": {
+        "LtRAM": 9,
+        "StRAM": 12
+      },
+      "tensor_category_histogram": {
+        "weights": 6,
+        "intermediate_activation": 15,
+        "kv_cache": 0
+      },
       "yaml": "workloads/tiny_residual_auto_fx.yaml",
-      "cmes_pickle": "outputs/tiny_residual_auto_fx_20260519_222903/cmes.pickle",
+      "cmes_pickle": "outputs/tiny_residual_auto_fx_20260519_224522/cmes.pickle",
       "tensor_features": "workloads/tiny_residual_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/tiny_residual_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/tiny_residual_auto_fx_tensor_features_classified.json",
-      "dump_folder": "outputs/tiny_residual_auto_fx_20260519_222903"
+      "memory_level_accesses": "workloads/tiny_residual_auto_fx_memory_level_accesses.json",
+      "expanded_memory_graph": "workloads/tiny_residual_auto_fx_expanded_memory_graph.json",
+      "expanded_memory_graph_assigned": "workloads/tiny_residual_auto_fx_expanded_memory_graph_assigned.json",
+      "miqp_frontend_input": "workloads/tiny_residual_auto_fx_miqp_frontend_input.json",
+      "dump_folder": "outputs/tiny_residual_auto_fx_20260519_224522"
     },
     {
       "model": "one_linear",
@@ -58,12 +88,27 @@
       "class_histogram": {
         "ephemeral_activation": 1
       },
+      "num_compute_nodes": 1,
+      "num_memory_access_records": 4,
+      "memory_assignment_histogram": {
+        "LtRAM": 2,
+        "StRAM": 2
+      },
+      "tensor_category_histogram": {
+        "weights": 1,
+        "intermediate_activation": 3,
+        "kv_cache": 0
+      },
       "yaml": "workloads/one_linear_fx.yaml",
-      "cmes_pickle": "outputs/one_linear_fx_20260519_222906/cmes.pickle",
+      "cmes_pickle": "outputs/one_linear_fx_20260519_224525/cmes.pickle",
       "tensor_features": "workloads/one_linear_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/one_linear_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/one_linear_fx_tensor_features_classified.json",
-      "dump_folder": "outputs/one_linear_fx_20260519_222906"
+      "memory_level_accesses": "workloads/one_linear_fx_memory_level_accesses.json",
+      "expanded_memory_graph": "workloads/one_linear_fx_expanded_memory_graph.json",
+      "expanded_memory_graph_assigned": "workloads/one_linear_fx_expanded_memory_graph_assigned.json",
+      "miqp_frontend_input": "workloads/one_linear_fx_miqp_frontend_input.json",
+      "dump_folder": "outputs/one_linear_fx_20260519_224525"
     },
     {
       "model": "tiny_cnn_linear",
@@ -80,12 +125,27 @@
         "ephemeral_activation": 1,
         "high_reuse_activation": 1
       },
+      "num_compute_nodes": 2,
+      "num_memory_access_records": 14,
+      "memory_assignment_histogram": {
+        "LtRAM": 7,
+        "StRAM": 7
+      },
+      "tensor_category_histogram": {
+        "weights": 4,
+        "intermediate_activation": 10,
+        "kv_cache": 0
+      },
       "yaml": "workloads/tiny_cnn_linear_auto_fx.yaml",
-      "cmes_pickle": "outputs/tiny_cnn_linear_auto_fx_20260519_222909/cmes.pickle",
+      "cmes_pickle": "outputs/tiny_cnn_linear_auto_fx_20260519_224528/cmes.pickle",
       "tensor_features": "workloads/tiny_cnn_linear_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/tiny_cnn_linear_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/tiny_cnn_linear_auto_fx_tensor_features_classified.json",
-      "dump_folder": "outputs/tiny_cnn_linear_auto_fx_20260519_222909"
+      "memory_level_accesses": "workloads/tiny_cnn_linear_auto_fx_memory_level_accesses.json",
+      "expanded_memory_graph": "workloads/tiny_cnn_linear_auto_fx_expanded_memory_graph.json",
+      "expanded_memory_graph_assigned": "workloads/tiny_cnn_linear_auto_fx_expanded_memory_graph_assigned.json",
+      "miqp_frontend_input": "workloads/tiny_cnn_linear_auto_fx_miqp_frontend_input.json",
+      "dump_folder": "outputs/tiny_cnn_linear_auto_fx_20260519_224528"
     },
     {
       "model": "tiny_attention",
@@ -103,12 +163,27 @@
         "ephemeral_activation": 3,
         "standard_activation": 3
       },
+      "num_compute_nodes": 6,
+      "num_memory_access_records": 24,
+      "memory_assignment_histogram": {
+        "LtRAM": 14,
+        "StRAM": 10
+      },
+      "tensor_category_histogram": {
+        "weights": 4,
+        "intermediate_activation": 20,
+        "kv_cache": 0
+      },
       "yaml": "workloads/tiny_attention_auto_fx.yaml",
-      "cmes_pickle": "outputs/tiny_attention_auto_fx_20260519_222912/cmes.pickle",
+      "cmes_pickle": "outputs/tiny_attention_auto_fx_20260519_224531/cmes.pickle",
       "tensor_features": "workloads/tiny_attention_auto_fx_tensor_features.json",
       "tensor_features_with_reuse": "workloads/tiny_attention_auto_fx_tensor_features_with_reuse.json",
       "tensor_features_classified": "workloads/tiny_attention_auto_fx_tensor_features_classified.json",
-      "dump_folder": "outputs/tiny_attention_auto_fx_20260519_222912"
+      "memory_level_accesses": "workloads/tiny_attention_auto_fx_memory_level_accesses.json",
+      "expanded_memory_graph": "workloads/tiny_attention_auto_fx_expanded_memory_graph.json",
+      "expanded_memory_graph_assigned": "workloads/tiny_attention_auto_fx_expanded_memory_graph_assigned.json",
+      "miqp_frontend_input": "workloads/tiny_attention_auto_fx_miqp_frontend_input.json",
+      "dump_folder": "outputs/tiny_attention_auto_fx_20260519_224531"
     }
   ],
   "class_histogram": {
@@ -116,5 +191,14 @@
     "ephemeral_activation": 7,
     "high_reuse_activation": 4,
     "standard_activation": 3
+  },
+  "memory_assignment_histogram": {
+    "LtRAM": 39,
+    "StRAM": 38
+  },
+  "tensor_category_histogram": {
+    "weights": 19,
+    "intermediate_activation": 58,
+    "kv_cache": 0
   }
 }

@@ -1,0 +1,578 @@
+{
+  "nodes": [
+    {
+      "node_id": "compute_0",
+      "kind": "compute",
+      "layer_id": 0,
+      "layer_name": "q",
+      "operator_type": "Gemm",
+      "inputs": [
+        "x",
+        "q_W"
+      ],
+      "outputs": [
+        "q_O"
+      ],
+      "memory_accesses": [
+        {
+          "tensor": "x",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 0,
+          "reads": 1,
+          "writes": 0,
+          "total_movement": 1,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 1,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "q_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 0,
+          "reads": 2048,
+          "writes": 2048,
+          "total_movement": 4096,
+          "reads_up": 1024,
+          "writes_down": 1024,
+          "reads_down": 1024,
+          "writes_up": 1024,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "q_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 1,
+          "reads": 4,
+          "writes": 4,
+          "total_movement": 8,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 4,
+          "writes_up": 4,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "q_W",
+          "tensor_category": "weights",
+          "operand": "W",
+          "memory_level": 0,
+          "reads": 16,
+          "writes": 0,
+          "total_movement": 16,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 16,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM"
+        }
+      ]
+    },
+    {
+      "node_id": "compute_1",
+      "kind": "compute",
+      "layer_id": 1,
+      "layer_name": "k",
+      "operator_type": "Gemm",
+      "inputs": [
+        "x",
+        "k_W"
+      ],
+      "outputs": [
+        "k_O"
+      ],
+      "memory_accesses": [
+        {
+          "tensor": "x",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 0,
+          "reads": 1,
+          "writes": 0,
+          "total_movement": 1,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 1,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "k_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 0,
+          "reads": 2048,
+          "writes": 2048,
+          "total_movement": 4096,
+          "reads_up": 1024,
+          "writes_down": 1024,
+          "reads_down": 1024,
+          "writes_up": 1024,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "k_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 1,
+          "reads": 4,
+          "writes": 4,
+          "total_movement": 8,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 4,
+          "writes_up": 4,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "k_W",
+          "tensor_category": "weights",
+          "operand": "W",
+          "memory_level": 0,
+          "reads": 16,
+          "writes": 0,
+          "total_movement": 16,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 16,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM"
+        }
+      ]
+    },
+    {
+      "node_id": "compute_2",
+      "kind": "compute",
+      "layer_id": 2,
+      "layer_name": "v",
+      "operator_type": "Gemm",
+      "inputs": [
+        "x",
+        "v_W"
+      ],
+      "outputs": [
+        "v_O"
+      ],
+      "memory_accesses": [
+        {
+          "tensor": "x",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 0,
+          "reads": 1,
+          "writes": 0,
+          "total_movement": 1,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 1,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "v_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 0,
+          "reads": 2048,
+          "writes": 2048,
+          "total_movement": 4096,
+          "reads_up": 1024,
+          "writes_down": 1024,
+          "reads_down": 1024,
+          "writes_up": 1024,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "v_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 1,
+          "reads": 4,
+          "writes": 4,
+          "total_movement": 8,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 4,
+          "writes_up": 4,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "v_W",
+          "tensor_category": "weights",
+          "operand": "W",
+          "memory_level": 0,
+          "reads": 16,
+          "writes": 0,
+          "total_movement": 16,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 16,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM"
+        }
+      ]
+    },
+    {
+      "node_id": "compute_3",
+      "kind": "compute",
+      "layer_id": 3,
+      "layer_name": "matmul",
+      "operator_type": "Gemm",
+      "inputs": [
+        "q_O",
+        "k_O"
+      ],
+      "outputs": [
+        "matmul_O"
+      ],
+      "memory_accesses": [
+        {
+          "tensor": "q_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 0,
+          "reads": 4,
+          "writes": 0,
+          "total_movement": 4,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 4,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "matmul_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 0,
+          "reads": 384,
+          "writes": 256,
+          "total_movement": 640,
+          "reads_up": 128,
+          "writes_down": 0,
+          "reads_down": 256,
+          "writes_up": 256,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "matmul_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 1,
+          "reads": 0,
+          "writes": 0,
+          "total_movement": 0,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 0,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "k_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "W",
+          "memory_level": 0,
+          "reads": 4,
+          "writes": 0,
+          "total_movement": 4,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 4,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        }
+      ]
+    },
+    {
+      "node_id": "compute_4",
+      "kind": "compute",
+      "layer_id": 4,
+      "layer_name": "matmul_1",
+      "operator_type": "Gemm",
+      "inputs": [
+        "matmul_O",
+        "v_O"
+      ],
+      "outputs": [
+        "matmul_1_O"
+      ],
+      "memory_accesses": [
+        {
+          "tensor": "matmul_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 0,
+          "reads": 2,
+          "writes": 0,
+          "total_movement": 2,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 2,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "matmul_1_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 0,
+          "reads": 288,
+          "writes": 256,
+          "total_movement": 544,
+          "reads_up": 32,
+          "writes_down": 0,
+          "reads_down": 256,
+          "writes_up": 256,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "matmul_1_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 1,
+          "reads": 0,
+          "writes": 0,
+          "total_movement": 0,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 0,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "v_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "W",
+          "memory_level": 0,
+          "reads": 4,
+          "writes": 0,
+          "total_movement": 4,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 4,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        }
+      ]
+    },
+    {
+      "node_id": "compute_5",
+      "kind": "compute",
+      "layer_id": 5,
+      "layer_name": "proj",
+      "operator_type": "Gemm",
+      "inputs": [
+        "matmul_1_O",
+        "proj_W"
+      ],
+      "outputs": [
+        "proj_O"
+      ],
+      "memory_accesses": [
+        {
+          "tensor": "matmul_1_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "I",
+          "memory_level": 0,
+          "reads": 1,
+          "writes": 0,
+          "total_movement": 1,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 1,
+          "writes_up": 0,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "proj_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 0,
+          "reads": 2048,
+          "writes": 2048,
+          "total_movement": 4096,
+          "reads_up": 1024,
+          "writes_down": 1024,
+          "reads_down": 1024,
+          "writes_up": 1024,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "proj_O",
+          "tensor_category": "intermediate_activation",
+          "operand": "O",
+          "memory_level": 1,
+          "reads": 4,
+          "writes": 4,
+          "total_movement": 8,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 4,
+          "writes_up": 4,
+          "suggested_memory": "StRAM"
+        },
+        {
+          "tensor": "proj_W",
+          "tensor_category": "weights",
+          "operand": "W",
+          "memory_level": 0,
+          "reads": 16,
+          "writes": 0,
+          "total_movement": 16,
+          "reads_up": 0,
+          "writes_down": 0,
+          "reads_down": 16,
+          "writes_up": 0,
+          "suggested_memory": "LtRAM"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "tensor": "x",
+      "producer": null,
+      "consumers": [
+        "compute_0",
+        "compute_1",
+        "compute_2"
+      ],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "size_elements": 64,
+      "fanout": 3,
+      "lifetime": 2,
+      "reuse": 3,
+      "class_name": "broadcast_activation",
+      "semantic_type": "input",
+      "category": "intermediate_activation"
+    },
+    {
+      "tensor": "q_O",
+      "producer": "compute_0",
+      "consumers": [
+        "compute_3"
+      ],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "size_elements": 64,
+      "fanout": 1,
+      "lifetime": 3,
+      "reuse": 4,
+      "class_name": "standard_activation",
+      "semantic_type": "activation",
+      "category": "intermediate_activation"
+    },
+    {
+      "tensor": "k_O",
+      "producer": "compute_1",
+      "consumers": [
+        "compute_3"
+      ],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "size_elements": 64,
+      "fanout": 1,
+      "lifetime": 2,
+      "reuse": 4,
+      "class_name": "standard_activation",
+      "semantic_type": "activation",
+      "category": "intermediate_activation"
+    },
+    {
+      "tensor": "v_O",
+      "producer": "compute_2",
+      "consumers": [
+        "compute_4"
+      ],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "size_elements": 64,
+      "fanout": 1,
+      "lifetime": 2,
+      "reuse": 4,
+      "class_name": "standard_activation",
+      "semantic_type": "activation",
+      "category": "intermediate_activation"
+    },
+    {
+      "tensor": "matmul_O",
+      "producer": "compute_3",
+      "consumers": [
+        "compute_4"
+      ],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        4,
+        4
+      ],
+      "size_elements": 16,
+      "fanout": 1,
+      "lifetime": 1,
+      "reuse": 2,
+      "class_name": "ephemeral_activation",
+      "semantic_type": "activation",
+      "category": "intermediate_activation"
+    },
+    {
+      "tensor": "matmul_1_O",
+      "producer": "compute_4",
+      "consumers": [
+        "compute_5"
+      ],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "size_elements": 64,
+      "fanout": 1,
+      "lifetime": 1,
+      "reuse": 1,
+      "class_name": "ephemeral_activation",
+      "semantic_type": "activation",
+      "category": "intermediate_activation"
+    },
+    {
+      "tensor": "proj_O",
+      "producer": "compute_5",
+      "consumers": [],
+      "metadata_consumers": [],
+      "shape": [
+        1,
+        4,
+        16
+      ],
+      "size_elements": 64,
+      "fanout": 0,
+      "lifetime": 0,
+      "reuse": 0,
+      "class_name": "ephemeral_activation",
+      "semantic_type": "activation",
+      "category": "intermediate_activation"
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "layers": [
+    {
+      "layer_id": 0,
+      "layer_name": "q",
+      "operator_type": "Gemm",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 1024,
+            "writes_down": 1024,
+            "reads_down": 1024,
+            "writes_up": 1024,
+            "total_reads": 2048,
+            "total_writes": 2048,
+            "total_movement": 4096
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4,
+            "writes_up": 4,
+            "total_reads": 4,
+            "total_writes": 4,
+            "total_movement": 8
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1,
+            "writes_up": 0,
+            "total_reads": 1,
+            "total_writes": 0,
+            "total_movement": 1
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16,
+            "writes_up": 0,
+            "total_reads": 16,
+            "total_writes": 0,
+            "total_movement": 16
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": 1,
+      "layer_name": "k",
+      "operator_type": "Gemm",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 1024,
+            "writes_down": 1024,
+            "reads_down": 1024,
+            "writes_up": 1024,
+            "total_reads": 2048,
+            "total_writes": 2048,
+            "total_movement": 4096
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4,
+            "writes_up": 4,
+            "total_reads": 4,
+            "total_writes": 4,
+            "total_movement": 8
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1,
+            "writes_up": 0,
+            "total_reads": 1,
+            "total_writes": 0,
+            "total_movement": 1
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16,
+            "writes_up": 0,
+            "total_reads": 16,
+            "total_writes": 0,
+            "total_movement": 16
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": 2,
+      "layer_name": "v",
+      "operator_type": "Gemm",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 1024,
+            "writes_down": 1024,
+            "reads_down": 1024,
+            "writes_up": 1024,
+            "total_reads": 2048,
+            "total_writes": 2048,
+            "total_movement": 4096
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4,
+            "writes_up": 4,
+            "total_reads": 4,
+            "total_writes": 4,
+            "total_movement": 8
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1,
+            "writes_up": 0,
+            "total_reads": 1,
+            "total_writes": 0,
+            "total_movement": 1
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16,
+            "writes_up": 0,
+            "total_reads": 16,
+            "total_writes": 0,
+            "total_movement": 16
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": 3,
+      "layer_name": "matmul",
+      "operator_type": "Gemm",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 128,
+            "writes_down": 0,
+            "reads_down": 256,
+            "writes_up": 256,
+            "total_reads": 384,
+            "total_writes": 256,
+            "total_movement": 640
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 0,
+            "writes_up": 0,
+            "total_reads": 0,
+            "total_writes": 0,
+            "total_movement": 0
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4,
+            "writes_up": 0,
+            "total_reads": 4,
+            "total_writes": 0,
+            "total_movement": 4
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4,
+            "writes_up": 0,
+            "total_reads": 4,
+            "total_writes": 0,
+            "total_movement": 4
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": 4,
+      "layer_name": "matmul_1",
+      "operator_type": "Gemm",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 32,
+            "writes_down": 0,
+            "reads_down": 256,
+            "writes_up": 256,
+            "total_reads": 288,
+            "total_writes": 256,
+            "total_movement": 544
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 0,
+            "writes_up": 0,
+            "total_reads": 0,
+            "total_writes": 0,
+            "total_movement": 0
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 2,
+            "writes_up": 0,
+            "total_reads": 2,
+            "total_writes": 0,
+            "total_movement": 2
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4,
+            "writes_up": 0,
+            "total_reads": 4,
+            "total_writes": 0,
+            "total_movement": 4
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": 5,
+      "layer_name": "proj",
+      "operator_type": "Gemm",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 1024,
+            "writes_down": 1024,
+            "reads_down": 1024,
+            "writes_up": 1024,
+            "total_reads": 2048,
+            "total_writes": 2048,
+            "total_movement": 4096
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 4,
+            "writes_up": 4,
+            "total_reads": 4,
+            "total_writes": 4,
+            "total_movement": 8
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 1,
+            "writes_up": 0,
+            "total_reads": 1,
+            "total_writes": 0,
+            "total_movement": 1
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 16,
+            "writes_up": 0,
+            "total_reads": 16,
+            "total_writes": 0,
+            "total_movement": 16
+          }
+        ]
+      }
+    }
+  ]
+}

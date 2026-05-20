@@ -1,0 +1,253 @@
+{
+  "layers": [
+    {
+      "layer_id": 0,
+      "layer_name": "stem",
+      "operator_type": "Conv",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 16384,
+            "writes_down": 0,
+            "reads_down": 16384,
+            "writes_up": 16384,
+            "total_reads": 32768,
+            "total_writes": 16384,
+            "total_movement": 49152
+          },
+          {
+            "level": 1,
+            "reads_up": 8,
+            "writes_down": 0,
+            "reads_down": 0,
+            "writes_up": 8,
+            "total_reads": 8,
+            "total_writes": 8,
+            "total_movement": 16
+          },
+          {
+            "level": 2,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 0,
+            "writes_up": 256,
+            "total_reads": 0,
+            "total_writes": 256,
+            "total_movement": 256
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 64,
+            "reads_down": 64,
+            "writes_up": 0,
+            "total_reads": 64,
+            "total_writes": 64,
+            "total_movement": 128
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 8,
+            "writes_up": 0,
+            "total_reads": 8,
+            "total_writes": 0,
+            "total_movement": 8
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 8,
+            "reads_down": 8,
+            "writes_up": 0,
+            "total_reads": 8,
+            "total_writes": 8,
+            "total_movement": 16
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 256,
+            "writes_up": 0,
+            "total_reads": 256,
+            "total_writes": 0,
+            "total_movement": 256
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": 1,
+      "layer_name": "conv0",
+      "operator_type": "Conv",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 16384,
+            "writes_down": 0,
+            "reads_down": 147456,
+            "writes_up": 147456,
+            "total_reads": 163840,
+            "total_writes": 147456,
+            "total_movement": 311296
+          },
+          {
+            "level": 1,
+            "reads_up": 8,
+            "writes_down": 0,
+            "reads_down": 0,
+            "writes_up": 8,
+            "total_reads": 8,
+            "total_writes": 8,
+            "total_movement": 16
+          },
+          {
+            "level": 2,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 0,
+            "writes_up": 256,
+            "total_reads": 0,
+            "total_writes": 256,
+            "total_movement": 256
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 576,
+            "reads_down": 147456,
+            "writes_up": 0,
+            "total_reads": 147456,
+            "total_writes": 576,
+            "total_movement": 148032
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 72,
+            "writes_up": 0,
+            "total_reads": 72,
+            "total_writes": 0,
+            "total_movement": 72
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 10,
+            "reads_down": 72,
+            "writes_up": 0,
+            "total_reads": 72,
+            "total_writes": 10,
+            "total_movement": 82
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 324,
+            "writes_up": 0,
+            "total_reads": 324,
+            "total_writes": 0,
+            "total_movement": 324
+          }
+        ]
+      }
+    },
+    {
+      "layer_id": 2,
+      "layer_name": "conv1",
+      "operator_type": "Conv",
+      "operands": {
+        "O": [
+          {
+            "level": 0,
+            "reads_up": 16384,
+            "writes_down": 0,
+            "reads_down": 147456,
+            "writes_up": 147456,
+            "total_reads": 163840,
+            "total_writes": 147456,
+            "total_movement": 311296
+          },
+          {
+            "level": 1,
+            "reads_up": 8,
+            "writes_down": 0,
+            "reads_down": 0,
+            "writes_up": 8,
+            "total_reads": 8,
+            "total_writes": 8,
+            "total_movement": 16
+          },
+          {
+            "level": 2,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 0,
+            "writes_up": 256,
+            "total_reads": 0,
+            "total_writes": 256,
+            "total_movement": 256
+          }
+        ],
+        "W": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 576,
+            "reads_down": 147456,
+            "writes_up": 0,
+            "total_reads": 147456,
+            "total_writes": 576,
+            "total_movement": 148032
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 72,
+            "writes_up": 0,
+            "total_reads": 72,
+            "total_writes": 0,
+            "total_movement": 72
+          }
+        ],
+        "I": [
+          {
+            "level": 0,
+            "reads_up": 0,
+            "writes_down": 10,
+            "reads_down": 72,
+            "writes_up": 0,
+            "total_reads": 72,
+            "total_writes": 10,
+            "total_movement": 82
+          },
+          {
+            "level": 1,
+            "reads_up": 0,
+            "writes_down": 0,
+            "reads_down": 324,
+            "writes_up": 0,
+            "total_reads": 324,
+            "total_writes": 0,
+            "total_movement": 324
+          }
+        ]
+      }
+    }
+  ]
+}

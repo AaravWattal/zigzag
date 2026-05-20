@@ -1,0 +1,64 @@
+{
+  "workload_name": "one_linear_fx",
+  "compute_nodes": [
+    {
+      "id": 0,
+      "name": "fc",
+      "operator_type": "Gemm"
+    }
+  ],
+  "tensor_edges": [
+    {
+      "tensor": "fc_O",
+      "producer": 0,
+      "consumers": [],
+      "size_elements": 32,
+      "lifetime": 0,
+      "reuse": 0,
+      "fanout": 0,
+      "category": "intermediate_activation"
+    }
+  ],
+  "memory_accesses": [
+    {
+      "layer_id": 0,
+      "operand": "I",
+      "tensor": "tensor_input",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 1,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "O",
+      "tensor": "fc_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 0,
+      "reads": 4096,
+      "writes": 4096,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "O",
+      "tensor": "fc_O",
+      "tensor_category": "intermediate_activation",
+      "memory_level": 1,
+      "reads": 8,
+      "writes": 8,
+      "assigned_memory": "StRAM"
+    },
+    {
+      "layer_id": 0,
+      "operand": "W",
+      "tensor": "fc_W",
+      "tensor_category": "weights",
+      "memory_level": 0,
+      "reads": 32,
+      "writes": 0,
+      "assigned_memory": "LtRAM"
+    }
+  ]
+}
